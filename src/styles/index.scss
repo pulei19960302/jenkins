@@ -1,0 +1,43 @@
+/* 同统一入口，并重置部分样式 */
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './elementUi/index';
+@import './common';
+
+html, body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+li {
+    list-style:none
+}
+* {
+    padding:0;
+    margin:0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+div:focus {
+    outline: none;
+}
+a {
+    text-decoration: none;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+    }
+}

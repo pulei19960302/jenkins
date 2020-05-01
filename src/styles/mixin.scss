@@ -1,0 +1,56 @@
+/* ========================简单型混合========================== */
+// 清除浮动
+@mixin clearfix {
+    &::after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+// 相对定位
+@mixin relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* ========================传参型混合========================== */
+/**
+ * 自定义滚动条样式（chrome）
+ * @param $width    宽度（默认6px）
+ * @param $bg-track 底部背景色
+ * @param $bg-thumb 滚动条颜色
+ */
+@mixin scrollBar($width: 6px, $bg-track: #f1f1f1, $bg-thumb: #c1c1c1) {
+    &::-webkit-scrollbar {
+        width: $width;
+        &-track-piece {
+            background: $bg-track;
+        }
+        &-thumb {
+            background: $bg-thumb;
+            border-radius: 20px;
+        }
+    }
+}
+/**
+ * 自定义hover效果
+ * @param $default  初始颜色
+ * @param $hover    hover色
+ * @param $opacity  hover透明度（默认0.7，不需要传1即可）
+ * @param $visited  访问后的颜色
+ */
+@mixin hover($default, $hover: $default, $opacity: 0.7, $visited: $default) {
+    color: $default;
+    &:hover {
+        color: $hover;
+        opacity: $opacity;
+    }
+    &:visited{
+        color: $visited;
+    }
+}
+
+

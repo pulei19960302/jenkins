@@ -1,0 +1,37 @@
+/* 变量存储 */
+
+/* 侧边栏 */
+// 主背景
+$menuBg: #374153;
+// 子菜单背景
+$subMenuBg: #1f2d3d;
+// hover背景
+$menuHover: #40a9ff;
+// 其他配色需到Sidebar组件设置
+
+/* 主题 */
+$theme: #1890ff;
+
+/* border色 */
+$border: #e1e1e1;
+
+/* 其他常用颜色 */
+$success-color: #67C23A;
+$warning-color: #E6A23C;
+$danger-color: #F56C6C;
+$info-color: #C0C4CC;
+
+
+// 左侧菜单宽度
+$side-bar-width:110px;
+// 顶部页面tab高度
+$nav-bar-height:56px;
+// $nav-bar-height:64px;
+
+// appMain 高度差(56+margin-top:10)
+$appMain-height:66px;
+
+
+// appMain padding left
+// $appMainPaddingLeft:25px;
+$appMainPaddingLeft:16px;
