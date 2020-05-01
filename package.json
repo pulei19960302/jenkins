@@ -56,6 +56,7 @@
     "video-react": "^0.14.1"
   },
   "devDependencies": {
+    "increase-memory-limit": "^1.0.7",
     "@types/node": "^12.7.12",
     "@types/webpack-env": "^1.14.0",
     "babel-core": "7.0.0-bridge.0",
@@ -96,6 +97,7 @@
     ]
   },
   "scripts": {
+    "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit",
     "analyze": "cross-env ANALYZE=1 umi build",
     "dev": "cross-env UMI_ENV=dev BUILD_ENV=dev umi build",
     "prod": "cross-env UMI_ENV=prod BUILD_ENV=prod umi build",
