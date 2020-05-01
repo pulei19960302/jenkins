@@ -1,0 +1,25 @@
+.titles {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.detailsTable {
+	&>div {
+		display: flex;
+		display: -webkit-flex;
+	}
+
+	:global {
+		.ant-row {
+			flex: 1;
+		}
+
+		.ant-spin-nested-loading {
+			width: 100%;
+		}
+	}
+}

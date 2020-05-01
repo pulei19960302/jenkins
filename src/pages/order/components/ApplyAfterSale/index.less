@@ -1,0 +1,89 @@
+@import '~themes/vars.less';
+
+.drawer {
+    :global {
+        .ant-drawer-body {
+            padding-bottom: 56px;
+        }
+    }
+}
+
+.goodsContainer {
+    :global {
+        .ant-col-1 {
+            margin-right: 8px;
+        }
+
+        .apply-num {
+            margin-left: 5px;
+        }
+
+        .ant-input-number {
+            margin-top: 3px;
+        }
+    }
+}
+
+.goodsList {
+    padding-top: 10px;
+}
+
+.orderTitle {
+    border-bottom : 1px solid #e9e9e9;
+    padding-bottom: 8px;
+}
+
+.goods {
+    height: 70px;
+
+    img {
+        float : left;
+        width : 60px;
+        height: 60px;
+    }
+}
+
+.goodsLine{
+    padding-left: 70px;
+}
+
+.blockTitle {
+    font-size  : 14px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);    
+}
+
+.applyReason,
+.returnAddress,
+.applyInfo,
+.handOptions {
+    padding-top: 12px;
+    border-top : 1px solid #e9e9e9;
+}
+
+.applyInfo {
+    padding-bottom: 16px;
+}
+
+.required:not(td)::before {
+    display     : inline-block;
+    margin-right: 4px;
+    color       : #f5222d;
+    font-size   : 13px;
+    font-family : SimSun, sans-serif;
+    line-height : 1;
+    content     : '*';
+}
+
+.imgVoucher {
+    width : 60px;
+    height: 60px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.tips {
+    color      : @danger;
+    font-size  : 12px;
+    font-weight: normal;
+}

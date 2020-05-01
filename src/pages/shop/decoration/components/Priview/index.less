@@ -1,0 +1,40 @@
+.drawer{
+    :global{
+        // .ant-drawer-body{
+        //     // padding-top:;
+        // }
+        
+    }
+}
+.iframeContainer{
+    display: flex;
+    justify-content: center;
+    // height:calc(100vh - 230px);
+    :global{
+        .container{
+            height:calc(100vh - 134px);
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .iframe{
+            width:375px;
+            height:calc(100vh - 200px);
+            // border-radius: 10px;
+            // border:20px solid #000;
+        }
+        .top{
+            position: relative;
+            width:375px;
+            height:66px;
+            background-image: url('~assets/shop/phone_head.jpg');
+            background-size: cover;
+            .fresh-btn{
+                position: absolute;
+                left:10px;
+                top:15px;
+            }
+        }
+    }
+}

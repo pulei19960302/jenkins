@@ -1,0 +1,95 @@
+
+.totalTitle {
+  margin          : -16px -16px 0 -16px;
+  padding         : 16px;
+  background-color: #f0f2f5;
+}
+
+.totalRow {
+  padding-bottom: 16px;
+  margin        : 0 -24px 16px -24px !important;
+  color         : #000;
+  background    : #f0f2f5;
+  justify-content: left;
+}
+
+.totalCol {
+  padding         : 16px 0 16px 24px;
+  font-size       : 12px;
+  text-align      : center;
+  background-color: #fff;
+  border-radius   : 4px;
+
+  .num {
+    display  : block;
+    margin   : 2px 0 0 0;
+    font-size: 22px;
+  }
+
+  &>div {
+    text-align: left;
+  }
+}
+
+.title {
+  position: relative;
+}
+
+.questionIcon {
+  position: absolute;
+  margin  : 0 0 0 5px;
+  color   : rgba(0, 0, 0, 0.15);
+  cursor  : pointer;
+}
+
+.notes {
+  position: relative;
+
+  textarea {
+    resize: none;
+  }
+
+  .nums {
+    position: absolute;
+    right   : 4px;
+    bottom  : 4px;
+  }
+}
+
+.settleInfos {
+  line-height: 35px;
+  :global {
+    .ant-col-5 {
+      text-align: right;
+      padding-right: 10px;
+    }
+  }
+}
+
+.settleForm {
+  :global {
+    .ant-form-item-label {
+      width: 21%;
+      padding-right: 10px;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    label {
+      color: #666;
+    }
+  }
+
+  textarea {
+    width: 300px;
+    resize: none;
+  }
+
+  .nums {
+    position: absolute;
+    right: 6px;
+    bottom: -2px;
+  }
+}

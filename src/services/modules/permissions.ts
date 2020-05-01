@@ -1,0 +1,17 @@
+export default {
+  getRolesList: 'POST /auth-role/list',
+  createRole: 'POST /auth-role/add',
+  updateRole: 'POST /auth-role/update',
+  deleteRole: 'POST /auth-role/delete',
+  getPermissionsList: 'POST /auth-route/list',
+  getRolePermissions: 'POST /auth-role-route/list',
+  updateRolePermissions: 'POST /auth-role-route/handle',
+  getDepartmentList: '/auth-department/list',
+  addDepartment: 'POST /auth-department/add',
+  deleteDepartment: 'POST /auth-department/delete',
+  updateDepartment: 'POST /auth-department/update',
+  getMemberList: '/auth-member/list',
+  addMember: 'POST /auth-member/add',
+  updateMember: 'POST /auth-member/update',
+  deleteMember: 'POST /auth-member/delete',
+}

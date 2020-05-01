@@ -1,0 +1,35 @@
+@import '~themes/vars.less';
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.list {
+  border-left: 1px solid #f2f2f2;
+
+}
+
+.date {
+  width          : 180px;
+  flex           : none;
+  align-items    : center;
+  justify-content: center;
+  border-right   : 1px solid #f2f2f2;
+  border-bottom  : 1px solid #f2f2f2;
+}
+
+.infos {
+  flex: 1;
+  &>div:nth-child(even) {
+    background-color: @green-light;
+  }
+}
+
+.info {
+  span {
+    padding      : 10px;
+    text-align   : center;
+    border-right : 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+  }
+}

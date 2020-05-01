@@ -1,0 +1,326 @@
+@import '~themes/vars';
+@border: 1px solid #D8D8D8;
+
+// left客户列表
+.customerContainer {
+    height: 100%;
+    .header {
+        border-bottom: @border;
+        height       : 48px;
+        :global {
+            .ant-avatar {
+                overflow: visible;
+                cursor: pointer;
+            }
+            .ant-dropdown-link {
+                padding: 8px 10px 0 16px;
+                float: left;
+            }
+           
+        }
+         .nikeName{
+            line-height: 48px;
+            padding-right: 14px;
+            .text-overflow();
+         }
+        .avaterIcon{
+            z-index: 999;
+            position: absolute;
+            left: 4px;
+            top: 18px;
+        }
+    }
+}
+:global{
+    .customer_service_menu{
+        min-width: 90px !important;
+    }
+}
+
+.search {
+    text-align: center;
+    padding: 10px 15px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    :global{
+        .searchInput{
+            flex: 1;
+            margin-right: 8px;
+        }
+        .operate{
+            width: 33px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.customerList {
+    height    : ~'calc(100% - 52px - 48px)';
+    overflow-y: auto;
+}
+
+.customerList::-webkit-scrollbar, .customerList::-webkit-scrollbar-thumb {
+    visibility: hidden;
+}
+.customerList:hover::-webkit-scrollbar,.customerList:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+.customerItemContainer {
+    padding: 0 14px;
+    position: relative;
+    &:hover{
+        .close{
+            visibility: visible;
+        }
+    }
+}
+
+.close{
+    position: absolute;
+    left    : 0;
+    top     : 24px;
+    cursor: pointer;
+    visibility: hidden;
+    & :hover{
+        color: @primary-color;
+    } 
+}
+
+.itemActive {
+    background: #f2f2f2;
+}
+
+.customerItem {
+    padding: 10px 0;
+    border-bottom: @border;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    .swap{
+        position: absolute;
+        color: #1890FF;
+        right: 24px;
+        top: 12px;
+    }
+    .badge {
+        position: absolute;
+        right   : 0;
+        top     : 10px;
+    }
+
+    .avatar {
+        float        : left;
+        width        : 40px;
+        height       : 40px;
+        border-radius: 50%;
+    }
+
+    .customerName {
+        font-weight : 400;
+        color       : rgba(0, 0, 0, 1);
+        margin-right: 40px;
+    }
+
+    .line {
+        padding-left : 6px;
+        margin-bottom: 0;
+        margin-top   : -1px;
+        .text-overflow();
+    }
+}
+
+// center聊天框
+.chatBox{
+    height: 100%;
+    .header{
+        border-bottom: @border;
+        height       : 48px;
+        line-height: 48px;
+        padding: 0 16px;
+        display: flex;
+        .left {
+            flex: 1;
+            .avatar{
+                float: left;
+                margin-top: 8px;
+            }
+            p{
+                color: #000;
+                margin-left: 40px;
+                .text-overflow();
+            }
+        }
+        .bansBar {
+            line-height: 48px;
+            i{
+                font-size: 16px;
+                margin-left: 16px;
+                cursor: pointer;
+                & :hover{
+                    color: @primary-color;
+                } 
+            }
+        }
+    }
+    .chatContainer{
+        height: ~'calc(100% - 48px - 144px)';
+        border-bottom: @border;
+        background: #F5F6F7;
+        padding: 16px;
+        overflow-y: auto;
+    }
+    .more {
+        text-align: center;
+        color: @primary-color;
+        cursor: pointer;
+    }
+    .chatContainer::-webkit-scrollbar, .chatContainer::-webkit-scrollbar-thumb {
+        visibility: hidden;
+    }
+    .chatContainer:hover::-webkit-scrollbar,.chatContainer:hover::-webkit-scrollbar-thumb{
+        visibility: visible;
+    }
+    .chatItem{
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+        :global{
+            .avatar{
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+            }
+            p{ 
+                margin: 0 0;
+            }
+            .header{
+                font-size: 12px;
+                color: #999;
+            }
+            .content{
+                display: inline-block;
+                margin-top: 2px;
+                max-width: 75%;
+                padding: 8px 10px;
+                position: relative;
+                video{
+                    max-width: 100%;
+                    max-height: 150px;
+                    object-fit: contain;
+                }
+                .playIcon{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    font-size: 36px;
+                    cursor: pointer;
+                    z-index: 9;
+                }
+                img{
+                    max-width: 250px;
+                    height: 100px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .customer{
+        :global{
+            .avatar{
+                float: left;
+            }
+            .header{
+                margin-left: 48px;
+            }
+            .content{
+                float: left;
+                margin-left: 8px;
+                border-radius:  0 10px 10px 10px;
+                background: #fff;
+            }
+        }
+    }
+    .customerService{
+        :global{
+            .avatar{
+                float: right;
+            }
+            .header{
+                text-align: right;
+                margin-right: 48px;
+            }
+            .content{
+                float: right;
+                margin-right: 8px;
+                color: #1890FF;
+                border-radius:  10px 0 10px 10px;
+                background:rgba(24,144,255,0.15);
+            }
+            .replayStatus{
+                position: absolute;
+                left: -28px;
+                bottom: 0;
+                font-size: 12px;
+            }
+            .uploadStatus{
+                position: absolute;
+                left: -16px;
+                bottom: 0;
+            }
+        }
+    }
+
+    .textAreaContainer{
+        background: #F5F6F7;
+    }
+    .toolsBar{
+        height: 30px;
+        line-height: 30px;
+        position: relative;
+        .icon{
+            font-size: 16px;
+            margin-left: 16px;
+            cursor: pointer;
+            & :hover{
+                color: @primary-color;
+            } 
+        }
+        .emojiPanel{
+            position: absolute;
+            top: -170px;
+            left: -165px;
+            z-index: 99999;
+        }
+    }
+    .textarea{
+        padding: 0 8px;
+        height: 70px;
+        textarea{
+            height: 100%;
+            resize: none;
+            border: none;
+            line-height: 16px;
+            background: #F5F6F7;
+            &:focus{
+                border: none;
+                box-shadow: none;
+            }
+        }
+    }
+    .footer{
+        height: 44px;
+    }
+    .subBtn{
+        float: right;
+        margin: 6px 8px 0 0;
+        width:72px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}

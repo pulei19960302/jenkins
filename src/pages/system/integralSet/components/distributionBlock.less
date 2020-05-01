@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  height: 235px;
+  margin-bottom: 20px;
+}
+.left {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  padding: 0 12px;
+}
+.right {
+  position: relative;
+  width: 150px;
+  height: 100%;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(237, 237, 237, 1);
+  &:hover {
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.05);
+  }
+}
+.rightBallBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 114px;
+}
+.rightBall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 500;
+}
+.rightAdd {
+  display: flex;
+  align-items: center;
+  border: 2px dotted rgba(237, 237, 237, 1);
+  cursor: pointer;
+}
+.rightAddContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.rightAddDesc {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.45);
+}
+.closeIcon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+.inputIcon {
+  margin-right: 7px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.45);
+}

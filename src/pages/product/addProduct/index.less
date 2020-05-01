@@ -1,0 +1,157 @@
+
+@headHeight: 56px;
+@padding: 32px;
+
+.addProduct {
+    height: calc(100vh - @headHeight - @padding);
+    padding-bottom: 0;
+    :global{
+            /* ============基本信息=========start */
+        .ant-card{
+            margin-bottom: 12px;
+        }
+        .ant-form, .tabs {
+            height: 100%;
+        }
+        .ant-tabs-content {
+            height: ~'calc(100% - 68px)';
+        }
+        .ant-tabs-tabpane{
+            padding: 0 12px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .specContainer{
+            margin-bottom: 12px;
+        }
+        .specLabel{
+            line-height: 32px;
+            display: inline-block;
+            width: 100%;
+            white-space: nowrap;
+            text-align: right;
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.85);
+            overflow: hidden;
+        }
+        .specTag{
+            margin-right: 8px;
+            margin-bottom: 8px;
+            height: 32px;
+            line-height: 32px;
+        }
+        .specCheckBoxArea{
+            margin-top: 8px;
+            padding: 16px;
+            background: #fafafa;   
+        }
+        .multiEditArea{
+            margin-bottom: 12px;
+            padding-top: 8px;
+            padding-right: 12px;
+            padding-bottom: 8px;
+            line-height: 40px;
+            background: #fafafa;
+        }
+        .fieldLabel{
+            display: inline-block;
+            width: 100%;
+            white-space: nowrap;
+            text-align: right;
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.85);
+            overflow: hidden;
+        }
+        .addSpecBtn{
+            margin-bottom: 12px;
+        }
+        .multiEditField{
+            margin-right: 8px;
+            width: 126px;
+        }
+       
+        /* ============基本信息=========end */
+
+        /* ============商品介绍=========start */
+        .required label::before{
+            display: inline-block;
+            margin-right: 4px;
+            color: #ff4d4f;
+            font-size: 14px;
+            font-family: SimSun, sans-serif;
+            line-height: 1;
+            content: '*';
+        }
+        .uploadInfo{
+            margin-bottom: 0;
+            height: 28px;
+            line-height: 28px;
+        }
+
+        .pageContentContainer{
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex:1;
+            height: 640px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            .pageTitle{
+                position: relative;
+                width:100%;
+                max-width:375px;
+                height:66px;
+                background-image: url('~assets/shop/phone_head.jpg');
+                background-size: cover;
+                span{
+                    position: absolute;
+                    left:50%;
+                    transform: translateX(-50%);
+                    bottom:10px;
+                    font-weight:500;
+                    font-size: 16px;
+                }
+            }
+        }
+        .editorPreview{
+            padding: 8px;
+            color: #333;
+            font-size: 15px;
+            line-height: 20px;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+            flex: 1;
+            p{                         // 同B端默认P标签样式一致
+                margin-bottom: 8px;
+                color: #333;
+                font-size: 15px;
+            }
+            div.image-wrap{
+                margin: 0 -8px;
+            }
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+        .editorContainer{
+            border-radius: 4px;
+            margin: 0 8px 0 12px;
+            height: 640px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        /* ============商品介绍=========end */
+    }
+}
+
+.multiUseWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.multiUseGroup{
+    flex: 1;
+    overflow-y: auto;
+    max-height: 210px;
+}

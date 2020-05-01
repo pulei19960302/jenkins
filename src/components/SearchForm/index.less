@@ -1,0 +1,57 @@
+.btns {
+  height: 39px;
+  line-height: 39px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  button + button {
+    margin-left: 12px;
+  }
+}
+
+.colHidden {
+  display: none;
+}
+
+.switch {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.barContent {
+  // padding: 10px 0 0;
+  // border-radius: 4px;
+  // margin-bottom: 10px;
+  :global {
+    ::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    ::-moz-placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    :-ms-input-placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+    .ant-select-selection__placeholder,
+    .ant-select-search__field__placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+
+.dateRange {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  height: 40px;
+  span {
+    margin-right: 5px;
+    font-size: 12px;
+  }
+  :global {
+    .ant-calendar-picker {
+      flex: 1;
+    }
+  }
+}

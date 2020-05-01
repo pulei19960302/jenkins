@@ -1,0 +1,44 @@
+.Emoji{
+    background: #fff;
+    padding: 10px;
+    width: 380px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border: 14px solid #666;
+    border-left-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-top-color:#fff;
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    transform: translate(-50%)
+}
+.emojiContainer {
+    height: 140px;
+    width: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    .item {
+        height: 32px;
+        width: 32px;
+        line-height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: all ease-out .2s;
+        &:hover {
+            font-size: 20px;
+            transform: scale(1.2)
+        }
+    }
+}

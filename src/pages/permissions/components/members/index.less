@@ -1,0 +1,93 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    margin-top: -16px;
+}
+
+.pageTitle {
+    padding-bottom: 0;
+    padding-left: 16px;
+    border-bottom: 1px solid #e9e9e9
+}
+
+.container {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    :global {
+        .ant-tree-treenode {
+            width: 100%;
+        }
+        .ant-tree li .ant-tree-node-content-wrapper:hover {
+            background: none !important;
+        }
+        .left{
+            width: 250px;
+            border-right: 1px solid #f0f2f5;
+            padding: 20px 20px 20px 0;
+            display: flex;
+            flex-direction: column;
+            .header{
+                font-weight:400;
+                color:rgba(0,0,0,0.65);
+                line-height:36px;
+                cursor: pointer;
+                height: 36px;
+            }
+            .tree{
+                max-height: ~'calc(100vh - 200px)';
+                flex: 1;
+                overflow-y: auto;
+            }
+            .nodeTitle{
+                position: absolute;
+                width: ~'calc(100% - 24px)';
+                display: flex;
+                justify-content: space-between;
+                padding-left: 6px;
+                margin-left: -6px;
+                .name{
+                    flex: 1;
+                }
+                .operate{
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                }
+            }
+            .ant-tree-node-selected{
+                background: none !important;
+                .nodeTitle{
+                    background: #EBF3FF;
+                }
+            }
+        }
+        .right{
+            position: relative;
+            flex: 1;
+            padding: 12px 0 52px 20px;
+            .searchDepartment{
+                height: 28px;
+                line-height: 28px;
+            }
+            .addMember{
+                z-index: 999;
+                position: absolute;
+                right: 0;
+                top: 43px;
+            }
+            .ant-table-body{
+                overflow-y: scroll;
+                max-height: ~'calc(100vh - 300px)';
+            }
+        }
+    }
+}
+
+:global{
+    .permissionMenuItem:hover{
+        background: #EBF3FF !important;
+    }
+}

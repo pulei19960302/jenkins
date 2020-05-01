@@ -1,0 +1,153 @@
+.container {
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background-color: #fff;
+
+    .title {
+        font-size: 16px;
+        &+div {
+            padding: 0 20px;
+            margin: 16px -20px 0 -20px;
+            border-top: 1px solid #E8E8E8;
+        }
+    }
+
+    .item {
+        padding-top: 16px !important;
+        margin: 0;
+        :global {
+            .ant-form-explain {
+                margin-left: 115px;
+            }
+            .ant-input-number {
+                width: auto;
+            }
+        }
+    }
+
+    .remindContent,
+    .autoReceive,
+    .autoCancel {
+        :global {
+            .ant-form-item-children {
+                display: flex;
+                display: -webkit-flex;
+            }
+            textarea {
+                width: 450px;
+                height: 85px;
+                resize: none;
+            }
+        }
+    }
+
+    .orderTypesList {
+        margin: 16px 0 0 115px;
+        :global {
+            table, th, td{
+                border-color: #e8e8e8 !important;
+            }
+            th {
+                text-align: center;
+                background-color: #f2f2f4;
+            }
+            td {
+                background-color: #fff;
+            }
+        }
+
+        .add {
+            display: inline-block;
+            margin-top: 8px;
+            color: #1890FF;
+            cursor: pointer;
+
+            i {
+                position: relative;
+                top: -1px;
+                font-size: 11px;
+                margin-right: 6px;
+            }
+        }
+    }
+
+    .afterSale {
+        .reason {
+            padding: 5px 12px;
+            margin-right: 8px;
+            font-size: 12px;
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            border-radius: 4px;
+    
+            i {
+                margin-left: 13px;
+                font-size: 10px;
+                color: rgba(0,0,0,0.25);
+                cursor: pointer;
+            }
+        }
+
+        .add {
+            padding: 5px 16px;
+            font-size: 12px;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+    }
+
+    .cancelOrder, .editOrder {
+        margin: 16px 0 0 115px;
+    }
+
+    .notes {
+        margin-left: 30px;
+        font-size: 12px;
+        color: #f5222d;
+    }
+}
+
+.addReasonModal {
+    .tips {
+        line-height: 32px;
+    }
+
+    :global {
+        .ant-form-item-label {
+            line-height: 32px;
+        }
+        .ant-form-item-children {
+            display: flex;
+            display: -webkit-flex;
+
+            .ant-input {
+                flex: 1;
+            }
+        }
+    }
+}
+
+.submit {
+    padding: 12px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.flex {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+.label {
+    display: inline-block;
+    width: 95px;
+    margin-right: 18px;
+    text-align: right;
+}
+
+.mr20 {
+    margin-right: 20px;
+}

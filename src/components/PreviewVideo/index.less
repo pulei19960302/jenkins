@@ -1,0 +1,36 @@
+.videoModal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    outline: 0;
+    background: rgba(0, 0, 0, 0.45);
+    :global{
+        .videoContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            padding: 10px;
+            video{
+                max-width: 750px;
+                max-height: 80vh;
+                background: #000;
+                border: none;
+                object-fit: contain;
+            }
+            .close{
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                font-size: 20px;
+                cursor: pointer;
+                color: #dedede;
+            }
+        }
+    }
+}

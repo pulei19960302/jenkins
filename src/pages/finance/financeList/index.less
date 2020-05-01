@@ -1,0 +1,53 @@
+.financeList {
+  .totalTitle {
+    margin: -16px -16px 0 -16px;
+    padding: 16px;
+    background-color: #f0f2f5;
+  }
+
+  .totalRow {
+    padding-bottom: 16px;
+    margin    : 0 -24px 16px -24px !important;
+    color     : #000;
+    background: #f0f2f5;
+  }
+
+  .totalCol {
+    padding   : 16px 0 16px 24px;
+    font-size : 12px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4px;
+
+    .num {
+      display  : block;
+      margin   : 2px 0 0 0;
+      font-size: 22px;
+    }
+
+    &>div {
+      text-align: left;
+    }
+  }
+
+  .title {
+    position: relative;
+  }
+
+  .questionIcon {
+    position: absolute;
+    margin  : 0 0 0 5px;
+    color   : rgba(0, 0, 0, 0.15);
+    cursor  : pointer;
+  }
+}
+
+.dateFields {
+  margin-right: 10px;
+  cursor      : pointer;
+
+  &:hover,
+  &:active {
+    color: @primary-color;
+  }
+}

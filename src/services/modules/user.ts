@@ -1,0 +1,45 @@
+export default {
+  // 登录&权限
+  loginUser: 'POST /account/login',
+  getUserInfo: '/account/info',
+  // 用户列表&详情
+//   userList:'/member/list',
+  userListEs:'post /member/get-user-list',
+  userDel:'POST /member/delete-member',
+  userEdit:'POST /member/member-edit',
+  userType:'POST /member/change-status',
+  userDetail:'/member/detail',
+  userInfo:'/member/user-info',
+  userAbstract:'/member/user-abstract',
+  userTeamInfo:'/member/team-info',
+  userTeamList:'/member/team-list',
+  userAddressDel:'POST /address/delete',
+  userAddressAdd:'POST /address/add',
+  userAddressEdit:'POST /address/update',
+  userUpLevel:'POST /member/update-member-sup',
+  userChangeType:'POST /member/change-type',
+  userRelation:'POST /member/member-relation',
+  userUpIntergral:'POST /integral/handle-integral',
+  userIntegralList:'POST /integral/get-integral-list',
+  userFindLevel3:"POST /member/get-member-team-three",
+  userFindLevel1:"POST /member/get-member-team-one",
+  userChangeRelation:"POST /relation-record/get-page-list",
+  // 用户群组
+  groupList:'/member-group/list',
+  groupAdd:'POST /member-group/add',
+  groupDel:'POST /member-group/del',
+  groupEdit:'POST /member-group/edit',
+  // 用户等级
+  userLevelList:'/member-type/list',
+  userLevelDetail:'/member-type/detail',
+  addLevel:'POST /member-type/add',
+  delLevel:'POST /member-type/del',
+  editLevel:'POST /member-type/edit',
+  // 用户审核
+  auditList:'POST /verify/list',
+  auditAdopt:'POST /verify/adopt',
+  auditRefuse:'POST /verify/refuse',
+  adutitDel:'POST /verify/delete',
+  //账户设置
+  accountSet: 'POST /account/update',
+}

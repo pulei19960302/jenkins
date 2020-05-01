@@ -1,0 +1,76 @@
+/*
+ * File: 面向属性的 CSS（仅分模块列出使用到的常用属性）
+ */
+
+:global {
+  /*
+   * 盒模型
+   */
+  .mt4 { margin-top: 4px; }
+  .mt12 { margin-top: 12px; }
+  .mt20 { margin-top: 20px; }
+  .mt24 { margin-top: 24px; }
+
+  .mr8 { margin-right: 8px; }
+  .mr10 { margin-right: 10px; }
+
+  .mb2 { margin-bottom: 2px; }
+  .mb5 { margin-bottom: 5px; }
+  .mb6 { margin-bottom: 6px; }
+  .mb8 { margin-bottom: 8px; }
+  .mb14 { margin-bottom: 14px; }
+  .mb20 { margin-bottom: 20px; }
+
+  .ml1 { margin-left: 1px; }
+  .ml2 { margin-left: 2px; }
+  .ml4 { margin-left: 4px; }
+  .ml8 { margin-left: 8px; }
+
+  .pt8 { padding-top: 8px; }
+  .pb8 { padding-bottom: 8px; }
+
+  .pd12 { padding: 12px; }
+
+  .dpflex { display: flex; }
+  .flex1 { flex: 1; }
+
+  /*
+   * 字号
+   */
+  .fs12 { font-size: 12px; }
+  .fs14 { font-size: 14px; }
+  .fs16 { font-size: 16px; }
+  .fs18 { font-size: 18px; }
+  .fs20 { font-size: 20px; }
+
+  /*
+   * 色调
+   */
+  .fcblue6 { color: @primary-color; }
+  .fcblack5 { color: #8c8c8c; }
+  .fcblack6 { color: #595959; }
+  .fcblack7 { color: #262626; }
+  .fcred5 { color: #ff4d4f; }
+  .fcgray6 { color: #bfbfbf; }
+
+  .bggray2 { background-color: #fafafa; }
+  .bggray3 { background-color: #f5f5f5; }
+  .bgblue6 { background-color: @primary-color; }
+
+  .btnblue5 {
+    color: @primary-color;
+    border: 1px solid @primary-color;
+  }
+
+  .btnGhostPrimary{
+    color: @primary-color;
+    border: 1px solid @primary-color;
+  }
+
+  /*
+   * 排版布局
+   */
+  .taLeft { text-align: left; }
+  .taRight { text-align: right; }
+  .fw600 { font-weight: 600; }
+}

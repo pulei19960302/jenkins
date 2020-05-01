@@ -1,0 +1,110 @@
+@import '~themes/vars.less';
+.list {
+  border: 1px solid #f2f2f2;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+.list:first-child{
+  margin-top: 0;
+}
+
+.listTitle {
+  // background: #fafafa;
+  background: @green-light;
+  border-bottom: 1px solid #f2f2f2;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 15px;
+}
+
+.listTitleItem {
+  display: inline-block;
+  margin-right: 25px;
+}
+.nickName {
+  width: auto;
+  float: right;
+  margin-right: 16px;
+}
+
+.listContent {
+  display: flex;
+  :global {
+    p {
+      margin-bottom: 0;
+      span {
+        color: #999;
+      }
+    }
+  }
+}
+
+.contentCol {
+  text-align: center;
+  padding: 10px;
+  border-right: 1px solid #f2f2f2;
+}
+.contentCol:last-child {
+  border-right: none;
+}
+
+.goodsContainer{
+  padding: 0;
+}
+
+.goods {
+  border-bottom: 1px solid #f2f2f2;
+  height: 90px;
+  padding: 10px;
+}
+
+.goods:last-child {
+  border-bottom: none;
+}
+
+.goodsInfo {
+  text-align: left;
+  font-size: 12px;
+  float: left;
+  width: 75%;
+}
+
+.goodsPrice {
+  float: right;
+  width: 25%;
+  text-align: center;
+}
+
+.goodsImg {
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+
+.goodsTitle {
+  padding-left: 80px;
+}
+
+.noneBorderRight {
+  border-right: none;
+}
+
+.address {
+  text-align: left;
+}
+
+.money {
+  color: #000;
+  font-weight: 500;
+}
+
+.operateBtn {
+  display: block;
+  // margin-bottom: 2px;
+}
+
+.remark {
+  padding: 3px 15px;
+  border-top: 1px solid #f2f2f2;
+  font-size: 12px;
+}

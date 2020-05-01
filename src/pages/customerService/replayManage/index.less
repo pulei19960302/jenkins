@@ -1,0 +1,60 @@
+.mb16{
+	margin-bottom: 16px;
+}
+
+.responseList {
+	margin: 0 0 0 12.5%;
+
+	.add {
+	    display: inline-block;
+	    margin-bottom: 8px;
+	    color: @primary-color;
+	    cursor: pointer;
+
+	    i {
+	        position: relative;
+		    top: -1px;
+		    font-size: 11px;
+		    margin-right: 6px;
+	    }
+	}
+
+	:global {
+        table, th, td{
+            border-color: #e8e8e8 !important;
+        }
+        th {
+            text-align: center !important;
+            background-color: #f2f2f4 !important;
+        }
+        td {
+            background-color: #fff;
+            text-align: center;
+        }
+    }
+}
+
+.responseForm {
+	:global {
+		.ant-form-item-label {
+			margin-right: 10px;
+		}
+	}
+
+	.textarea {
+		margin-left: 17%;
+		padding-left: 10px;
+		
+		textarea {
+			width: 230px;
+			max-width: 230px;
+			height: 80px;
+			resize: none;
+		}
+	}
+
+	.uploadImg {
+		margin-left: 17%;
+		padding-left: 10px;
+	}
+}

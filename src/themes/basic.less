@@ -1,0 +1,48 @@
+/*
+ * File: 公有可复用布局
+ */
+:global {
+  /*
+   * 图文混排布局
+   */
+  .title14 { /* 14 字号标题 */
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #262626;
+  }
+  .title16 { /* 16 字号标题 */
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+  }
+
+  .operationText {
+    color: @primary-color;
+    cursor: pointer;
+  }
+
+  #productDetail .ant-upload-list-picture-card .ant-upload-list-item-info {
+    height: 88px;
+  }
+  .ant-input-number{
+    width: 100%;
+  }
+  #editorPreviewMain img {
+    width: 100%;
+  }
+  #editorPreviewMain video {
+    width: 100%;
+  }
+  #editorDetailMain img {
+    width: 100%;
+  }
+
+  // Date RangePicker ranges 
+  .ant-picker-ranges .ant-tag {
+    color: @primary-color;
+    border-color: @green-border;
+    background-color: @green-bg;
+  }
+}

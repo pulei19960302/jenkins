@@ -1,0 +1,58 @@
+@import '~themes/index.less';
+.componentContainer{
+   width:100%;
+//    background-color: #fff;
+   height: @page-min-height-widthout-paddingtop;
+//    padding-bottom:56px;
+//    overflow-y: scroll;
+//    overflow-x: hidden;
+   :global{
+        .ant-collapse{
+            border:none;
+            background-color: #fff;
+            .ant-collapse-content{
+                border-top:none;
+                .ant-collapse-content-box{
+                    padding:0 16px;
+                }
+            }
+            .ant-collapse-item{
+                border:none;
+            }
+        }
+   }
+}
+.componentBox{
+    width:100%;
+    height:100%;
+    padding-bottom:56px;
+    max-width: 275px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+.componentsPanel{
+    width:100%;
+}
+.componentDropBox{
+    display: flex;
+    justify-content: space-between;
+    // justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding-bottom:10px;
+    border-bottom:1px solid #eee;
+    margin-bottom:20px;
+}
+.componentsItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:76px;
+    height:76px;
+    margin-bottom:6px;
+    // margin-right: 6px;
+    background-color: #FAFAFA;
+    font-size: 12px;
+}

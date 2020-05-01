@@ -1,0 +1,91 @@
+.infos {
+  margin: 0 0 12px;
+  line-height: 28px;
+}
+
+.regions {
+  .title {
+    margin-bottom: 15px;
+
+    &>span {
+      color: rgba(0, 0, 0, 0.85);
+    }
+
+    a {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  :global {
+    .ant-table-body {
+      overflow-y: auto !important;
+    }
+    th {
+      &::before {
+        display: inline-block;
+        margin-right: 4px;
+        color: #f5222d;
+        font-size: 14px;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: '*';
+      }
+    }
+
+    .ant-select-selection__clear {
+      position: absolute;
+      top: 50%;
+      margin-top: -7px;
+    }
+  }
+
+  &.view {
+    :global {
+      th {
+        &::before {
+          content: '',
+        }
+      }
+    }
+    
+    .areas {
+      :global {
+        .ant-select-disabled {
+          .ant-select-selection {
+            background: transparent;
+            border: none;
+            cursor: auto;
+          }
+  
+          .ant-select-selection--multiple .ant-select-selection__choice {
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+.spin {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255,255,255,0.7);
+  z-index: 100;
+
+  &>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+  }
+}
+
+.btn {
+  position: absolute;
+  top: 14px;
+  right: 25px;
+}

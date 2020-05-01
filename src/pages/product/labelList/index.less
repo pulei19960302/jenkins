@@ -1,0 +1,167 @@
+@import '~themes/vars.less';
+.modalSpecification {
+  // padding: 15px 0px 0 0;
+}
+.modalIcon {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 16px;
+}
+
+.more {
+  margin: -15px 0 10px 112px;
+  cursor: pointer;
+}
+
+.listContainer {
+  :global {
+    .ant-table-expanded-row {
+      background: #fff;
+    }
+    .ant-table-tbody > tr.ant-table-row-selected td {
+      background: #fff;
+    }
+    .ant-table-thead > tr > th {
+      background: #fff;
+      color: #aaa;
+      font-size: 12px;
+    }
+    tr.ant-table-expanded-row:hover {
+      background: #fff;
+    }
+  }
+}
+
+.listItem {
+  margin-bottom: 14px;
+  border-radius: 4px;
+}
+
+.listItem :last-child {
+  margin-bottom: 0;
+}
+
+.firstTabRow {
+  background: #f7f7f7;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.secondTabRow {
+  background: #fff;
+}
+
+.style_box{
+  width: 44px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.select_box{
+  background:rgba(255,255,255,1);
+  box-shadow:0 5px 4px 0 rgba(0,0,0,0.5);
+  border:2px solid rgba(240,240,240,1);
+}
+
+.text_box{
+  width: 40px;
+  height: 25px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.barContent {
+  // padding: 10px 0 0;
+  // border-radius: 4px;
+  // margin-bottom: 10px;
+  :global {
+    ::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    ::-moz-placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+
+    :-ms-input-placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+    .ant-select-selection__placeholder,
+    .ant-select-search__field__placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+
+.btns {
+  height: 39px;
+  line-height: 39px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  button + button {
+    margin-left: 12px;
+  }
+}
+.label_search{
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.search_divider{
+  margin: 10px 0;
+}
+.editable {
+  td {
+    padding-top: 13px !important;
+    padding-bottom: 12.5px !important;
+  }
+}
+.labelGroupModal{
+  :global{
+    .ant-modal-content{
+      height: 600px;
+      :global{
+        .ant-modal-body{
+          height: 430px;
+          overflow-y: auto;
+          margin-top: 50px;
+          padding-top: 0;
+        }
+        .ant-modal-footer{
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.addGroupBtn{
+  position: absolute;
+  top: 65px;
+  left: 16px;
+}
+
+.contentInner {
+  background: #fff;
+  padding: 16px;
+  box-shadow: @shadow-1;
+  min-height: 200px;
+  position: relative;
+  padding-bottom:52px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .contentInner {
+    padding: 12px;
+    min-height: 200px;
+    margin-bottom: 16px;
+  }
+}

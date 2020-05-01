@@ -1,0 +1,41 @@
+.pageComponentItem{
+    position: relative;
+    // border:1px solid #ccc;
+    :global{
+        .close-icon{
+            position: absolute;
+            right: -2px;
+            top:-2px;
+            font-size: 22px;
+            cursor: pointer;
+            color:#1890FF;
+            z-index: 100;
+        }
+    }
+}
+.active{
+    border:2px solid #1890FF;
+}
+.commonBox{
+    padding:12px;
+    overflow: hidden;
+}
+.InnerTitle{
+    position: relative;
+    :global{
+        .link{
+            position: absolute;
+            right:0;
+            top:50%;
+            transform: translateY(-50%);
+            font-weight: normal;
+            font-size: 14px;
+        }
+    }
+}
+// .shopTricksTop{
+
+// }
+// .shopTricksBanner{
+
+// }

@@ -1,0 +1,37 @@
+.panelBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  border-radius: 10px;
+  border: 2px solid rgba(237, 237, 237, 1);
+  padding: 35px 16px;
+  &:hover{
+      .icon1{
+          visibility: hidden;
+      }
+      .icon2{
+          visibility: visible;
+      }
+  }
+}
+.icon1,.icon2{
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icon1{
+    visibility: visible;
+}
+.icon2{
+    visibility: hidden;
+}
+.dealPanel {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  &:not(:last-child) {
+    border-right: 1px solid rgba(237, 237, 237, 1);
+  }
+}
