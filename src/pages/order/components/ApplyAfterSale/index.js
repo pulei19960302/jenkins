@@ -6,17 +6,17 @@ import { Input, Select, Drawer, message } from 'antd';
 import GoodsList from './GoodsList'
 import { UploadImg, DrawerFooter } from 'components'
 import { mobileReg } from 'utils/constant'
+import { APPLY_TYPE } from '@/pages/order/constants'
 import styles from './index.less'
 const FormItem = Form.Item
 const TextArea = Input.TextArea
 const Option = Select.Option
 
 @Form.create()
-@connect(({ app }) => ({ app }))
 class ApplyAfterSale extends PureComponent {
   state = {
     loading: false,
-    salesType: this.props.app.enums.apply_type || [],
+    salesType: APPLY_TYPE,
     salesReason: [],
     return_goods_sku_list: [],
     img: [],

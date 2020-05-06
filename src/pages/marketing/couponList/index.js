@@ -119,7 +119,7 @@ class CouponList extends PureComponent {
   //delete coupon
   deleteCoupon = (ids, callback) => {
     Modal.confirm({
-      title: '确认删除所选用户么?',
+      title: '确认删除所选优惠券么?',
       okText: '确定',
       cancelText: '取消',
       onOk: () => {

@@ -38,12 +38,13 @@ export default function CommonSelect({ value, onChange, type, selectPorps = {} }
         }
 
     }, [init, type])
+
     return (
         <Select
             showSearch
             optionFilterProp="children"
             {...selectPorps}
-            value={value}
+            value={list.find(el => el.id === value) ? value : undefined}
             onChange={onChange}
             placeholder={placeholder}
             getPopupContainer={triggerNode => triggerNode.parentElement}>

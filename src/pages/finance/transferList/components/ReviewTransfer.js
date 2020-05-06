@@ -90,7 +90,7 @@ class ReviewTransfer extends PureComponent {
         </Row>
         <Row type="flex">
           <Col span={6}>创建时间&nbsp;:&nbsp;&nbsp;</Col>
-          <Col span={18}>{created_at && moment(created_at).format(FORMAT.DATETIME)}</Col>
+          <Col span={18}>{created_at && moment(created_at * 1000).format(FORMAT.DATETIME)}</Col>
         </Row>
         {/* <Row type="flex">
           <Col span={8}>提现状态&nbsp;:&nbsp;&nbsp;</Col>

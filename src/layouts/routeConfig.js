@@ -7,6 +7,13 @@ const database = [
     // menu_permissions: ['promotion-manage'],
   },
   {
+    id: '11',
+    breadcrumbParentId: '1',
+    menuParentId: '-1',
+    name: '账户设置',
+    route: '/user/accountSet',
+  },
+  {
     id: '2',
     breadcrumbParentId: '1',
     name: '用户',
@@ -27,7 +34,7 @@ const database = [
     menuParentId: '-1',
     name: '用户详情',
     route: '/user/userDetail/:id',
-    menu_permissions: [$api.user.userDetail.url]
+    menu_permissions: [$api.user.userInfo.url]
   },
   {
     id: '22',
@@ -44,7 +51,7 @@ const database = [
     menuParentId: '-1',
     name: '用户等级设置',
     route: '/user/userLevelSet',
-    menu_permissions: [$api.user.userLevelDetail.url]
+    menu_permissions: `${$api.user.addLevel},${$api.user.editLevel.url}`
   },
   {
     id: '23',
@@ -77,14 +84,14 @@ const database = [
     route: '/product/productList',
     menu_permissions: [$api.product.productESList.url]
   },
-  // {
-  //   id: '31',
-  //   breadcrumbParentId: '3',
-  //   menuParentId: '3',
-  //   name: '商品列表',
-  //   route: '/product/list',
-  //   menu_permissions: [$api.product.productESList.url]
-  // },
+  {
+    id: '333',
+    breadcrumbParentId: '3',
+    menuParentId: '-1',
+    name: '商品详情',
+    route: '/product/addProduct',
+    menu_permissions: `${$api.product.addProduct.url},${$api.product.editProduct.url}`
+  },
   {
     id: '32',
     breadcrumbParentId: '3',
@@ -147,7 +154,7 @@ const database = [
     menuParentId: '-1',
     name: '供应商新增/编辑',
     route: '/product/supplierEdit/:id',
-    menu_permissions: [$api.supplier.supplierDetail.url]
+    menu_permissions: `${$api.supplier.supplierAdd.url},${$api.supplier.supplierEdit.url}`
   },
   {
     id: '4',
@@ -248,11 +255,18 @@ const database = [
     id: '56',
     breadcrumbParentId: '5',
     menuParentId: '5',
-    name: '商家货款',
+    name: '供应商货款',
     route: '/finance/supplierList',
     menu_permissions: [$api.finance.supplierList.url],
   },
-
+  {
+    id: '561',
+    breadcrumbParentId: '56',
+    menuParentId: '-1',
+    name: '商家货款明细',
+    route: '/finance/supplierDetails',
+    menu_permissions: [$api.finance.suppilerDetails.url],
+  },
   {
     id: '57',
     breadcrumbParentId: '5',
@@ -299,10 +313,11 @@ const database = [
   },
   {
     id: '62',
-    breadcrumbParentId: '62',
+    breadcrumbParentId: '6',
     menuParentId: '-1',
-    name: '优惠券详情',
-    route: '/marketing/couponEdit/:id?',
+    name: '新增优惠券',
+    route: '/marketing/couponAdd',
+    menu_permissions: `${$api.coupon.editCoupon.url},${$api.coupon.addCoupon.url}`
   },
   //   {
   //     id: '5',
@@ -351,7 +366,7 @@ const database = [
     breadcrumbParentId: '-1',
     name: '客服',
     icon: 'iconcustomerservice',
-    menu_permissions: `${$api.workorder.getServiceList.url},${$api.workorder.list.url},${$api.workorder.getTypeList.url}`
+    menu_permissions: `is_customer_service,${$api.workorder.list.url},${$api.workorder.getTypeList.url}`
   },
   {
     id: '91',
@@ -359,7 +374,7 @@ const database = [
     menuParentId: '9',
     name: '客服会话',
     route: '/customerService/conversation',
-    menu_permissions: [$api.workorder.getServiceList.url]
+    menu_permissions: ['is_customer_service']
   },
   // {
   //   id: '92',

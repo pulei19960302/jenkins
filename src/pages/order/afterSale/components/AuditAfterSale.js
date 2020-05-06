@@ -24,20 +24,19 @@ import CloseSale from './CloseSale'
 import { cutOutDecimals } from 'utils'
 import { nextTick } from 'utils/nextTick'
 import styles from '../index.less'
-import { AFTER_SALE_STATUS, hasBtn } from '../../constants'
+import { SALE_TYPE, AFTER_SALE_STATUS, hasBtn } from '@/pages/order/constants'
 const { WAIT_AUDIT, WAIT_CUSTOMER_SEND, WAIT_RETURN_LIBRARY } = AFTER_SALE_STATUS
 const Option = Select.Option
 const TextArea = Input.TextArea
 
 @Form.create()
-@connect(({ app }) => ({ app }))
 class AuditAfterSale extends PureComponent {
     state = {
         closeSaleModal: false,
         loading: false,
         return_goods_sku_list: [],
         status: 1,
-        salesTypeList: this.props.app.enums.sales_type || [],
+        salesTypeList: SALE_TYPE,
         sale_type: '',  // 售后方式 1换货|2退货|3补偿|4补发
         sales_fee: 0, // 售后金额
         freight_type: 0, // 退还运费（0无|1补平台运费|2退用户运费/运费险）

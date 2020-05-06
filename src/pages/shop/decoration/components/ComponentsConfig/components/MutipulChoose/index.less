@@ -1,19 +1,24 @@
+@bg-color: #FFFAF8;
+@border-color: #FFEEE7;
+
+
 .chooseCouponItem{
     display: flex;
     align-items: center;
     position: relative;
-    border:1px solid #91D5FF;
-    background-color: #E6F7FF;
+    border:1px solid @border-color;
+    background-color: @bg-color;
     border-radius: 4px;
     padding:0 12px;
     margin-bottom:8px;
     height:36px;
-    color:rgba(0,0,0,0.85);
+    // color:@primary-color;
     :global{
         .icon{
             position: absolute;
             right:0;
             top:0;
+            color: @red;
             cursor: pointer;
             font-size: 16px;
             transform: translate(50%,-50%);

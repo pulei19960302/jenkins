@@ -218,13 +218,13 @@ export const getColumns = function (tabsEnum) {
       width: 180,
       render: (text, row) => (
         <div>
-          <a
-            onClick={() => {
+          {
+            $api.user.userInfo.permission() &&
+            <a onClick={() => {
               this.goDetail(row.id)
-            }}
-          >
-            查看
-          </a>
+            }}>查看</a>
+          }
+
           <Divider type="vertical" />
           {
             $api.user.userEdit.permission() &&

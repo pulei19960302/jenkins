@@ -137,6 +137,7 @@ class Message extends PureComponent {
                   this.handleUpdateCouponForm({ overTypeTime: value })
                 }}
                 disabledDate={this.handleDisabledDate}
+                getPopupContainer={trigger => trigger.parentNode}
               />
             )
           }

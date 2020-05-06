@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Divider } from 'antd'
-import { ExclamationCircleTwoTone, RightCircleFilled } from '@ant-design/icons'
+import { ExclamationCircleTwoTone } from '@ant-design/icons'
 import { Switch } from 'antd'
 import { PRODUCT_STATUS, PRODUCT_STATUS_NAME, hasBtn } from '../../constants'
 export const tabsFilds = [

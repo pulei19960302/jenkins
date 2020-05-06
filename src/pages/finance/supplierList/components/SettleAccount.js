@@ -69,7 +69,7 @@ class SettleAccount extends PureComponent {
       paid_amount = '',
     } = details || {}
     return (
-      <Descriptions column={1}>
+      <Descriptions column={2} className={styles.settleInfos}>
         <Descriptions.Item label="供应商">
           {supplier_name}&nbsp;({supplier_id})
         </Descriptions.Item>
@@ -90,7 +90,7 @@ class SettleAccount extends PureComponent {
       </Descriptions>
     )
   }
-
+ 
   renderForm() {
     const { form, details = {} } = this.props
     const { remark: remarkProps = '', status = '' } = details || {}
@@ -101,11 +101,11 @@ class SettleAccount extends PureComponent {
     const length = changeRemark ? remark && remark.length : remarkProps && remarkProps.length
 
     return (
-      <Form className={styles.settleForm}>
+      <Form className={styles.settleForm} >
         {
           status === SUPPLIER_STATUS.WAIT &&
           (
-            <Form.Item label="本次结算">
+            <Form.Item label="本次结算" wrapperCol={{span: 10}}>
               {
                 getFieldDecorator('paid_amount', {
                   rules: [{
@@ -146,7 +146,7 @@ class SettleAccount extends PureComponent {
             getFieldDecorator('remark', {
               initialValue: remarkProps,
             })(
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: 'relative', width: '330px', marginLeft: '39px' }}>
                 <Input.TextArea rows={4} defaultValue={remarkProps} onChange={this.handleChangeRemark} maxLength={MAXLENGTH} />
                 <span className={styles.nums}>{length || 0}/{MAXLENGTH}</span>
               </div>

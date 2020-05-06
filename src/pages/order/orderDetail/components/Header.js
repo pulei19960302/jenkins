@@ -1,6 +1,6 @@
 import React from 'react'
-import { ProfileTwoTone } from '@ant-design/icons';
-import { Card, Descriptions, Row, Col, Button } from 'antd';
+import { IconFont } from 'components'
+import { Card, Descriptions, Row, Col, Button } from 'antd'
 import { hasBtn } from '../../constants'
 import account from 'accounting'
 import styles from '../index.less'
@@ -52,21 +52,21 @@ class OrderInfo extends React.PureComponent {
         {
           hasBtn('modifyRemarks', order.status) &&
           <Button
-          onClick={() => {
-            showModal('modifyRemarksModal')
-          }}
-        >
-          订单备注
+            onClick={() => {
+              showModal('modifyRemarksModal')
+            }}
+          >
+            订单备注
         </Button>
         }
         {
           hasBtn('sendGoods', order.status) &&
           <Button
-          onClick={() => {
-            showModal('sendGoodsModal')
-          }}
-        >
-          一键发货
+            onClick={() => {
+              showModal('sendGoodsModal')
+            }}
+          >
+            一键发货
         </Button>
         }
       </div>
@@ -77,12 +77,12 @@ class OrderInfo extends React.PureComponent {
     const title = () => {
       return (
         <div>
-          <ProfileTwoTone style={{ fontSize: 22, verticalAlign: 'middle' }} />
+          <IconFont type="icondingdan" style={{ color: '#12C2C2', verticalAlign: 'middle', fontSize: 18 }} />
           &nbsp;<span style={{ verticalAlign: 'middle' }}>
-            订单号：{order.order_sn}&nbsp;&nbsp; 
-            {order.status_name} &nbsp;&nbsp; 
+            订单号：{order.order_sn}&nbsp;&nbsp;
+            {order.status_name} &nbsp;&nbsp;
             {account.formatMoney(order.actual_fee, '￥')}
-            </span>
+          </span>
         </div>
       );
     }
@@ -96,7 +96,7 @@ class OrderInfo extends React.PureComponent {
         <Row>
           <Col>
             <Descriptions>
-              <Descriptions.Item label="账户名称">{order.nick_name}</Descriptions.Item>
+              <Descriptions.Item label="用户名称">{order.nick_name}</Descriptions.Item>
               <Descriptions.Item label="支付方式">{order.pay_type_name}</Descriptions.Item>
               <Descriptions.Item label="订单来源">{order.from_name}</Descriptions.Item>
               <Descriptions.Item label="付款时间">

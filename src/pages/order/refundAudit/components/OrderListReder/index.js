@@ -12,7 +12,7 @@ const OrderListRender = ({ order, context, removeFields }) => {
           售后时间：{order.created_at}
         </div>
         <div className={[styles.listTitleItem, styles.nickName].join(' ')}>
-          昵称：{order.uid_name}
+          用户名：{order.uid_name}
         </div>
       </div>
       <div className={styles.listContent}>

@@ -247,15 +247,15 @@ class Decoration extends PureComponent{
                     </Row>
                 </DragDropContext>
                 <div className={styles.bottomBtnBox}>
-                    <Button onClick={showPageSet} className="mr8">页面设置</Button>
+                    <Button onClick={showPageSet} className="mr8" shape="round">页面设置</Button>
                     {
                         $api.shop.editPage.permission() && 
-                        <Button onClick={()=>{saveAll()}} loading={submitLoading} className="mr8">保存</Button>
+                        <Button onClick={()=>{saveAll()}} loading={submitLoading} className="mr8" shape="round">保存</Button>
                     }
-                    <Button onClick={()=>{saveAll(true)}} loading={submitLoading} className="mr8">预览</Button>
+                    <Button onClick={()=>{saveAll(true)}} loading={submitLoading} className="mr8" shape="round">预览</Button>
                     {
                         $api.shop.prod.permission() && 
-                        <Button onClick={prod} type="primary" loading={submitLoading}>发布</Button>
+                        <Button onClick={prod} type="primary" loading={submitLoading} shape="round">发布</Button>
                     }
                 </div>
                 <Priview ref={child=>{this.priviewContext = child}} id={this.state.id} toogle={this.tooglePriview} showPriview={this.state.showPriview}></Priview>

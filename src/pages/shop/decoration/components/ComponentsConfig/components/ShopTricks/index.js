@@ -2,6 +2,7 @@ import React,{ PureComponent,Fragment } from 'react'
 import { Radio,Select } from 'antd'
 import Block from '../Block'
 import Subtitle from '../subtitle'
+import ColorBall from '../ColorBall';
 import ChooseTemplate from '../ChooseTemplate'
 import PanelSwitch from '../PanelSwitch'
 import { FSwitch,ColorPicker,UploadImg,MutipulImg } from 'components'
@@ -224,7 +225,7 @@ class ShopTricks extends PureComponent{
                                         {
                                             colors.map((it,index)=>(
                                                 <ChooseTemplate className={styles.colorPicker} key={index} item={it} onActive={colorChange} tplList={colors} index={index}>
-                                                    <div style={{width:14,height:14,backgroundColor:it.color}}></div>
+                                                    <ColorBall color={it.color} />
                                                 </ChooseTemplate>
                                             ))
                                         }

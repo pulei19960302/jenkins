@@ -191,16 +191,23 @@ export const getColumns = function () {
       dataIndex: 'start_at',
       width: 300,
       render: (text = '', record = {}) => {
-        const { start_at = '', end_at = '' } = record
-        return (
-          record.be_over_type === 1 && (
+        const { start_at = '', end_at = '', days = '' } = record
+        if (record.be_over_type === 1) {
+          return (
             <span>
               {start_at && moment(start_at).format(FORMAT)}
-              &nbsp;至&nbsp;
+                &nbsp;至&nbsp;
               {end_at && moment(end_at).format(FORMAT)}
             </span>
           )
-        )
+        }
+        else {
+          return (
+            <span>
+              领取后&nbsp;{days}&nbsp;天&nbsp;内有效
+            </span>
+          )
+        }
       }
     },
     {

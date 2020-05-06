@@ -4,7 +4,7 @@ import { Page, TabsBar, SearchForm, Pagination } from 'components'
 import { getSearchFields, tabsFilds } from './components/fields'
 import { List, Result } from './components'
 
-@connect(({ app, orderList, loading }) => ({ app, orderList, loading }))
+@connect(({ orderList, loading }) => ({  orderList, loading }))
 class OrderList extends PureComponent {
   constructor(props) {
     super(props)
@@ -52,11 +52,11 @@ class OrderList extends PureComponent {
     dispatch({ type: 'orderList/getList', payload: { page, pageSize } })
   }
   render() {
-    const { loading, orderList, app } = this.props
+    const { loading, orderList } = this.props
     const { pagination, result, list, query, status } = orderList
     const searchFormProps = {
       search: query,
-      fields: getSearchFields(app.enums.order_type),
+      fields: getSearchFields(),
       onSearch: this.handleSearch,
     }
     const btns = [{

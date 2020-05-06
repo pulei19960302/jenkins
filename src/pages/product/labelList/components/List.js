@@ -61,21 +61,20 @@ class List extends PureComponent {
   render() {
     const { list } = this.props
     const styleList = [
-      {background: 'linear-gradient(133deg,rgba(243,23,12,1) 0%,rgba(249,63,30,1) 50%,rgba(255,103,49,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
-      {background: 'linear-gradient(133deg,rgba(0,132,253,1) 0%,rgba(0,214,255,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
-      {background: 'linear-gradient(133deg,rgba(140,10,220,1) 0%,rgba(214,135,255,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
-      {background: 'linear-gradient(133deg,rgba(0,194,175,1) 0%,rgba(0,234,140,1) 99%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
+      {background: 'linear-gradient(93deg,rgba(207,39,64,1) 0%,rgba(234,108,104,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
+      {background: 'linear-gradient(90deg,rgba(33,138,235,1) 0%,rgba(55,180,241,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
+      {background: 'linear-gradient(90deg,rgba(129,59,216,1) 0%,rgba(161,93,226,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
+      {background: 'linear-gradient(90deg,rgba(12,197,179,1) 0%,rgba(52,226,200,1) 100%)', textColor: '#FFFFFF', borderColor: '', isSelect: false},
       {background: 'linear-gradient(133deg,rgba(41,42,35,1) 0%,rgba(94,94,83,1) 100%)', textColor: '#E4B55C', borderColor: '', isSelect: false},
-      {background: '', textColor: '#F1260A', borderColor: '#FF8272', isSelect: false},
-      {background: '', textColor: '#1780F2', borderColor: '#78B3F2', isSelect: false},
-      {background: '', textColor: '#8C0ADC', borderColor: '#CE7CFD', isSelect: false},
-      {background: '', textColor: '#0ECF71', borderColor: '#5CCB94', isSelect: false},
-      {background: '', textColor: '#FF8300', borderColor: '#FFB500', isSelect: false},
+      {background: '', textColor: '#EA485E', borderColor: '#FF817E', isSelect: false},
+      {background: '', textColor: '#388BE6', borderColor: '#78B3F2', isSelect: false},
+      {background: '', textColor: '#8E4DDE', borderColor: '#AA6DE8', isSelect: false},
+      {background: '', textColor: '#0DC6B4', borderColor: '#5BDFCB', isSelect: false},
+      {background: '', textColor: '#C29A4F', borderColor: '#DCBF84', isSelect: false},
     ]
     const {
       addLabelModal,
       editLabelModal,
-      selectedRowKeys
     } = this.state
     const addLabelProps = {
       ...this.getCommonProps('addLabelModal'),

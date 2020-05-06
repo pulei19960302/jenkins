@@ -69,7 +69,7 @@ export const getColumns = function () {
       title: () => {
         return (
           <span className={styles.title}>
-            销售金额
+            下单金额
             <Popover content="用户下单的金额总数（不考虑取消订单和售后）；注意这里包含用户余额支付的金额">
               <QuestionCircleFilled className={styles.questionIcon} />
             </Popover>

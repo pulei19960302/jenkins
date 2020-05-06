@@ -2,13 +2,14 @@ import React,{PureComponent,Fragment} from 'react'
 import { Input } from 'antd'
 import { MutipulImg } from 'components'
 import Block from '../Block'
+
 import Subtitle from '../subtitle'
+import ColorBall from '../ColorBall';
 import ChooseTemplate from '../ChooseTemplate'
 import PanelSwitch from '../PanelSwitch'
 import { getTplList,getColors,getItem } from './fields'
 import LinkSetBtn from '@/components/LinkSet/btn'
 import styles from './index.less'
-
 
 
 
@@ -148,8 +149,8 @@ class ImageNav extends PureComponent{
                     <div style={{display:'flex'}}>
                         {
                             colors.map((it,index)=>(
-                                <ChooseTemplate className={styles.colorPicker} key={index} item={it} onActive={colorChange} tplList={colors} index={index}>
-                                    <div style={{width:14,height:14,backgroundColor:it.color}}></div>
+                                <ChooseTemplate className={styles.colorPicker} key={index} item={it} onActive={colorChange} tplList={colors} index={index}>                 
+                                    <ColorBall color={it.color} />
                                 </ChooseTemplate>
                             ))
                         }

@@ -52,7 +52,7 @@ class FinanceList extends PureComponent {
         <Col span={4}>
           <div className={styles.totalCol}>
             <div>
-              <span>销售总额&nbsp;(元)</span>
+              <span>下单总额&nbsp;(元)</span>
               <span className={styles.num}>{account.formatMoney(sales_amount, '￥')}</span>
             </div>
           </div>
@@ -60,7 +60,7 @@ class FinanceList extends PureComponent {
         <Col span={4}>
           <div className={styles.totalCol}>
             <div>
-              <span>已返利总额&nbsp;(元)</span>
+              <span>已返佣总额&nbsp;(元)</span>
               <span className={styles.num}>{account.formatMoney(commission, '￥')}</span>
             </div>
           </div>

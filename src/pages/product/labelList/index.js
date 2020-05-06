@@ -121,7 +121,6 @@ class ProductLabelList extends PureComponent {
         {
           name: '批量删除',
           key: 'del',
-          type: 'danger',
           permission: $api.label.labelDelBatch.permission(),
         },
       ].filter(it => it.permission || it.permission === undefined),

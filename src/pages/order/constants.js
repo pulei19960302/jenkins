@@ -114,3 +114,6 @@ export const hasBtn = (type, status) => {
   }
   return btns[type].permission && btns[type].orderStatus.includes(status)
 }
+
+export const APPLY_TYPE = [{value: 1, name: "换货"}, {value: 2, name: "退货"}, {value: 4, name: "补发"}]
+export const SALE_TYPE = [{value: 1, name: "换货"}, {value: 2, name: "退货"}, {value: 3, name: "补偿"}, {value: 4, name: "补发"}]

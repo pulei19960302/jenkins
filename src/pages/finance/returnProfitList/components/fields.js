@@ -1,8 +1,8 @@
 
 import account from 'accounting'
 import moment from 'moment'
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import { Popover } from 'antd';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons'
+import { Popover } from 'antd'
 import { LinesEllipsis } from 'components'
 import { FORMAT, DATE_RANGE } from '../../constants'
 import Details from './Details'
@@ -24,10 +24,10 @@ export const getSearchFields = function (is_pays = []) {
     },
     {
       key: 'timeType',
-      placeholder: '交易初始时间',
+      placeholder: '返佣开始时间',
       enums: [
-        { value: 0, name: '交易初始时间' },
-        { value: 1, name: '交易完成时间' }
+        { value: 0, name: '返佣开始时间' },
+        { value: 1, name: '返佣完成时间' }
       ],
     },
     {
@@ -48,7 +48,7 @@ export const getSearchFields = function (is_pays = []) {
     },
     {
       key: 'member_id',
-      placeholder: '请输入客户账号/客户ID搜索',
+      placeholder: '请输入用户名/ID搜索',
     },
     {
       key: 'order_no',
@@ -60,17 +60,17 @@ export const getSearchFields = function (is_pays = []) {
 export const getColumns = function (is_pays) {
   return [
     {
-      title: '交易初始时间',
+      title: '返佣开始时间',
       dataIndex: 'created_at',
       render: (text, row) => (
         <span>{text && moment(text * 1000).format(FORMAT.DATETIME)}</span>
       )
     },
     {
-      title: '客户账号',
+      title: '用户名 / ID',
       dataIndex: 'nickname',
       render: (text, row) => (
-        <span>{text}&nbsp;({row.member_id})</span>
+        <span>{text}&nbsp;/&nbsp;{row.member_id}</span>
       )
     },
     {
@@ -85,7 +85,7 @@ export const getColumns = function (is_pays) {
       }
     },
     {
-      title: '订单来源',
+      title: '订单号',
       dataIndex: 'order_no',
       render: (text = '', row) => {
         return (
@@ -95,14 +95,14 @@ export const getColumns = function (is_pays) {
       }
     },
     {
-      title: '交易金额',
+      title: '返佣金额',
       dataIndex: 'money',
       render: (text = '', row) => {
         if (text < 0) {
           return (
             <div>
               <span>
-                <ArrowLeftOutlined style={{ color: '#d9001b', fontSize: '12px' }} />
+                <MinusOutlined style={{ color: '#d9001b', fontSize: '12px' }} />
                 &nbsp;{account.formatMoney(Math.abs(text), '￥')}
               </span>
             </div>
@@ -111,7 +111,7 @@ export const getColumns = function (is_pays) {
         return (
           <div>
             <span>
-              <ArrowRightOutlined style={{ color: '#70b603', fontSize: '12px' }} />
+              <PlusOutlined style={{ color: '#70b603', fontSize: '12px' }} />
               &nbsp;{account.formatMoney(text, '￥')}
             </span>
           </div>
@@ -126,7 +126,7 @@ export const getColumns = function (is_pays) {
       )
     },
     {
-      title: '交易完成时间',
+      title: '返佣完成时间',
       dataIndex: 'updated_at',
       render: (text = '', row) => (
         <span>{text && moment(text * 1000).format(FORMAT.DATETIME)}</span>
@@ -148,15 +148,15 @@ export const getColumns = function (is_pays) {
 
 export const detailColumns = [
   {
-    title: '客户账号',
+    title: '用户名 / ID',
     dataIndex: 'member_id',
     render: (text = '', row = {}) => {
       const { nickname = '' } = row
-      return <div>{nickname}({text})</div>
+      return <div>{nickname}&nbsp;/&nbsp;{text}</div>
     }
   },
   {
-    title: '交易金额',
+    title: '返佣金额',
     dataIndex: 'money',
   },
   {

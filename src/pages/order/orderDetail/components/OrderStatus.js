@@ -3,9 +3,16 @@ import { Card, Descriptions } from 'antd'
 import styles from '../index.less'
 
 class OrderStatus extends React.PureComponent {
-  state = {}
   render() {
     const { showModal, order } = this.props
+
+
+    const logistics = order.logistics_info && order.logistics_info.content || [];
+    let logisticsString = '-';
+
+    if (logistics.length > 0) {
+      logisticsString = `${logistics[0].time || ''} ${logistics[0].text || ''}`
+    }
     return (
       <Card
         title={`当前状态：${order.status_name}`}
@@ -27,17 +34,17 @@ class OrderStatus extends React.PureComponent {
           </Descriptions.Item>
           <Descriptions.Item label="物流跟踪" span={3}>
             {
-              order.logistics_info && !!order.logistics_info.length &&
+              logistics && !!logistics.length &&
               <a
                 onClick={() => {
                   showModal('logisticsTrailModal')
                 }}
               >
-                {order.logistics_info[0]}（查看详情）
+                {logisticsString}（查看详情）
             </a>
             }
             {
-              (!order.logistics_info || !order.logistics_info.length) && '-'
+              (!logistics || !logistics.length) && '-'
             }
           </Descriptions.Item>
         </Descriptions>

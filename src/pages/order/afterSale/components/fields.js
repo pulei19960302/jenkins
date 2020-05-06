@@ -77,7 +77,10 @@ export const getSearchFields = (enums = []) => {
     },
     {
       key: 'user_id',
-      placeholder: '客户ID',
+      placeholder: '用户ID',
+      inputProps: {
+        type: 'number'
+      }
     }
     // {
     //   key: 'goods_fee',

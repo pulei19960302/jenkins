@@ -162,7 +162,8 @@ class CustomerList extends PureComponent {
                         overlayClassName="customer_service_menu"
                     >
                         <div className="ant-dropdown-link">
-                            <Avatar src={user.avatar}><IconFont type={statusItem.icon} className={styles.avaterIcon} /></Avatar>
+                            <Avatar src={user.avatar}></Avatar>
+                            <IconFont type={statusItem.icon} className={styles.avaterIcon} />
                         </div>
                     </Dropdown>
                     <div className={styles.nikeName}>

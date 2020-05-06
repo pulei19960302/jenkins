@@ -68,6 +68,7 @@ class OtherInfo extends PureComponent {
                                         showTime={{ format: 'HH' }}
                                         format="YYYY-MM-DD HH:00"
                                         placeholder={['团购开始时间', '团购结束时间']}
+                                        getPopupContainer={triggerNode => triggerNode.parentElement}
                                     />
                                 </Form.Item>
                             }

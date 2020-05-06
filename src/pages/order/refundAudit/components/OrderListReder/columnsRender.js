@@ -83,7 +83,7 @@ export const Address = ({ item, field }) => {
       className={[styles.contentCol, styles.address].join(' ')}
     >
       <p>
-        {item.uid_name} {item.receiver_mobile}
+        {item.receiver_name} {item.receiver_mobile}
       </p>
       <p>
         {item.receiver_province_name} {item.receiver_city_name} {item.receiver_district_name}

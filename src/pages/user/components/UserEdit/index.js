@@ -92,7 +92,7 @@ class UserEdit extends PureComponent {
                 },
                 { pattern: mobileReg, message: '手机号格式不正确' },
               ],
-            })(<Input placeholder="请输入" />)}
+            })(<Input placeholder="请输入" type="tel" autocomplete="off" maxLength={11} />)}
           </FormItem>
 
           <FormItem label="性别">

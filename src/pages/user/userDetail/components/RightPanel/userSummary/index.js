@@ -3,32 +3,28 @@ import { IconFont } from 'components'
 import { Col, Row } from 'antd'
 import styles from './index.less'
 import AddressList from './addressList'
-export default function({userAbstract,uid,fresh}) {
-  const { caption,address,others,trade  } = userAbstract
+export default function ({ userAbstract, uid, fresh }) {
+  const { caption, address, others, trade } = userAbstract
   const panels = [
     {
       title: '资产信息',
       desc: `￥${caption.balance || 0}`,
-      icon1:'iconzhanghuyue1',
-      icon2: 'iconzhanghuyue',
+      icon1: 'iconzichanxinxi'
     },
     {
       title: '佣金金额',
       desc: `￥${caption.reward || 0}`,
-      icon1:'iconyongjinjine1',
-      icon2: 'iconyongjinjine',
+      icon1: 'iconyongjinxinxi'
     },
     {
       title: '优惠券（张）',
       desc: caption.coupon,
-      icon1:'iconyouhuiquan1',
-      icon2: 'iconyouhuiquan',
+      icon1: 'iconyouhuiquan4'
     },
     {
       title: '积分',
       desc: caption.integral,
-      icon1:'iconjifen2',
-      icon2: 'iconjifen',
+      icon1: 'iconjifen3'
     },
   ]
   const deals = [
@@ -99,22 +95,21 @@ const Title = ({ children, style }) => {
     </div>
   )
 }
-const Panel = ({ icon1,icon2, title, desc, span = 6 }) => {
+const Panel = ({ icon1, title, desc, span = 6 }) => {
   return (
     <Col span={span}>
       <div className={styles.panelBox}>
-        <div style={{width:'100%'}}>
+        <div style={{ width: '100%' }}>
           <div className="fcblack5 fs16">{title}</div>
           <div
             className="fcblack7 fs20"
-            style={{ fontWeight: 500, marginTop: 10,width:'100%',overflow:'hidden',textOverflow:'ellipsis' }}
+            style={{ fontWeight: 500, marginTop: 10, width: '100%', overflow: 'hidden', textOverflow: 'ellipsis' }}
           >
             {desc}
           </div>
         </div>
         <div>
           <IconFont className={styles.icon1} style={{ fontSize: 44 }} type={icon1}></IconFont>
-          <IconFont className={styles.icon2} style={{ fontSize: 44 }} type={icon2}></IconFont>
         </div>
       </div>
     </Col>
@@ -134,7 +129,7 @@ const DealPanel = ({ title, desc }) => {
 const SimpleInfo = ({ title, children }) => {
   return (
     <Col span={8}>
-      <span className="fcblack7 mr8" style={{fontWeight:400}}>{title}：</span>
+      <span className="fcblack7 mr8" style={{ fontWeight: 400 }}>{title}：</span>
       <span>{children}</span>
     </Col>
   )

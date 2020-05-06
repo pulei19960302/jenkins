@@ -1,8 +1,15 @@
 @import '~themes/vars.less';
 
+.items {
+  :global {
+    .ant-menu-item-active {
+      background-color: #e6fffb;
+    }
+  }
+}
+
 .header {
   padding: 0;
-  box-shadow: @shadow-2;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -10,6 +17,7 @@
   z-index: 9;
   align-items: center;
   background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,21,41,0.12);
 
   &.fixed {
     position: fixed;
@@ -21,6 +29,16 @@
 
     &.collapsed {
       width: ~'calc(100% - 80px)';
+    }
+  }
+
+  .defaultAvator {
+    margin: 0 0 0 8px;
+    font-size: 32px;
+    vertical-align: middle;
+    
+    svg {
+      border-radius: 50%;
     }
   }
 

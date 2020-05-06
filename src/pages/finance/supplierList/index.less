@@ -57,17 +57,19 @@
 }
 
 .settleInfos {
-  line-height: 35px;
   :global {
-    .ant-col-5 {
-      text-align: right;
-      padding-right: 10px;
+    .ant-descriptions-row > td {
+      padding-bottom: 8px;
     }
   }
 }
 
 .settleForm {
   :global {
+    .ant-legacy-form-item {
+      margin-bottom: 4px;
+    }
+
     .ant-form-item-label {
       width: 21%;
       padding-right: 10px;
@@ -80,10 +82,16 @@
     label {
       color: #666;
     }
+
+    .ant-legacy-form-explain {
+      position: absolute;
+      left: 102%;
+      top: 10px;
+      white-space: nowrap;
+    }
   }
 
   textarea {
-    width: 300px;
     resize: none;
   }
 

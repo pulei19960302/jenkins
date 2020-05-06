@@ -12,13 +12,6 @@ const { TEXT, IMAGE, VIDEO } = MSG_CONTENT_TYPE
 
 @connect(({ conversation }) => ({ conversation }))
 class ChatList extends PureComponent {
-    state = {
-        showPreviewVideo: false,
-        videoSrc: ''
-    }
-    toggleVideo(isShow, src) {
-        this.setState({ showPreviewVideo: isShow, videoSrc: src })
-    }
     UNSAFE_componentWillReceiveProps(nextProps) {
         const { hasScroll: nextHasScroll } = nextProps.conversation
         const { hasScroll: prevHasScroll } = this.props.conversation
@@ -40,7 +33,6 @@ class ChatList extends PureComponent {
         })
     }
     render() {
-        const { showPreviewVideo, videoSrc } = this.state
         const { msgList, hasMoreMsg } = this.props.conversation
         return (
             <div className={styles.chatContainer} id="chatContainer">
@@ -76,7 +68,7 @@ class ChatList extends PureComponent {
                                         }
                                         {
                                             msg.msg_content_type === VIDEO && <Fragment>
-                                                <IconFont type="iconbofang" className="playIcon" onClick={() => this.toggleVideo(true, msg.message)} />
+                                                <IconFont type="iconbofang" className="playIcon" onClick={() => PreviewVideo({ videoSrc: msg.message })} />
                                                 <video src={msg.message}>
                                                 </video>
                                             </Fragment>
@@ -112,13 +104,8 @@ class ChatList extends PureComponent {
                         </div>
                     ))
                 }
-                {
-                    showPreviewVideo && <PreviewVideo
-                        close={() => this.toggleVideo(false)}
-                        src={videoSrc} />
-                }
             </div>
-        );
+        )
     }
 }
 

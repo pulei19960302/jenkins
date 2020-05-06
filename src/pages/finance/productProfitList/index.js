@@ -39,7 +39,7 @@ class ProductProfitList extends PureComponent {
         <Col span={6}>
           <div className={styles.totalCol}>
             <div>
-              <span>销售总额&nbsp;(元)</span>
+              <span>下单总额&nbsp;(元)</span>
               <span className={styles.num}>116,123,345.21</span>
             </div>
           </div>

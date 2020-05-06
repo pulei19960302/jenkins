@@ -19,7 +19,6 @@ export default {
     locationPathname: '', //当前路由地址
     locationQuery: {},  // 路由参数
     key: false,   // 强制重新触发（如：导航权限）
-    enums: {} //枚举
   },
   subscriptions: {
     setup({ dispatch }) {
@@ -29,7 +28,7 @@ export default {
       }
       if (
         ['/', '#/', ''].includes(window.location.hash) &&
-          window.location.pathname === (process.env.UMI_ENV === 'prod' ? '/web/' : '/')
+        window.location.pathname === (process.env.UMI_ENV === 'prod' ? '/web/' : '/')
       ) {
         router.push('/dashboard')
       }
@@ -50,19 +49,18 @@ export default {
   effects: {
     *query({ payload }, { call, put, select }) {
       const { data } = yield call($api.user.getUserInfo)
-      const enums = yield call($api.common.getEnumeList)
+      if (data.is_customer_service) { data.menu_permissions.push('is_customer_service') }
       yield put({ type: 'updateUser', payload: { user: data } })
-      store.set('userInfo',data)
-      yield put({ type: 'updateState', payload: { enums: enums.data } })
+      store.set('userInfo', data)
       yield put({ type: 'forceReRender' })
     },
-    *queryUserInfo({ payload }, { call, put, select }){
+    *queryUserInfo({ payload }, { call, put, select }) {
       const { data } = yield call($api.user.getUserInfo)
       yield put({ type: 'updateUser', payload: { user: data } })
-      store.set('userInfo',data)
+      store.set('userInfo', data)
     },
     *logout({ payload }, { call, put, select }) {
-      yield put({ type: 'updateState', payload: { isLogout: true } })
+      yield put({ type: 'updateState', payload: { isLogout: true, key: false } })
       const { locationPathname } = yield select(_ => _.app)
       Token.removeToken()
       router.push({

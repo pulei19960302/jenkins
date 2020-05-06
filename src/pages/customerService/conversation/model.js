@@ -131,7 +131,7 @@ export default modelExtend(model, {
                             if (data.person_type === CUSTOMER) {
                                 yield put({ type: 'read', payload: [data.msg_index] }) //通知C端已读
                                 const activeIndex = customerList.findIndex(el => el.key === data.key)
-                                customerList.splice(activeIndex, 1, { ...data, unread_msg_num: 0 })
+                                customerList.splice(activeIndex, 1, { ...customerList[activeIndex], ...data, unread_msg_num: 0 })
                             }
                             msgList.push(data)  // 新增记录
                             yield put({ type: 'updateState', payload: { hasScroll: true } })
@@ -140,14 +140,15 @@ export default modelExtend(model, {
                     } else {
                         let activeIndex = customerList.findIndex(el => el.key === activeKey)
                         let index = customerList.findIndex(el => el.key === data.key)
+                        const oldData = customerList[index]   // 保证之前独有的字段不被覆盖
                         console.log('收到新消息', index)
                         if (index >= 0) {  // 客户列表已存在客户
                             if (sort_type === 1) {  // 按会话排序
                                 console.log('收到新消息', data)
-                                customerList.splice(index, 1, data)
+                                customerList.splice(index, 1, { ...oldData, ...data })
                             } else {               //  按未读排序
                                 customerList.splice(index, 1)
-                                customerList.unshift(data)
+                                customerList.unshift({ ...oldData, ...data })
                             }
                         } else {   // 新会话
                             customerList.unshift(data)
@@ -183,10 +184,13 @@ export default modelExtend(model, {
                         const hasScroll = !msgList.length ? true : false //首次加载msg滚动到底部
                         const newList = data.list.filter(el => [1, 2].includes(el.person_type))
                         yield put({ type: 'updateState', payload: { msgList: [...newList, ...msgList], hasMoreMsg: true, hasScroll } })
-                        if (!newList.length && msgList.length) {
-                            message.info('没有更多消息了')
+                        if (!newList.length) {
+                            if (msgList.length) { message.info('没有更多消息了') }
                             yield put({ type: 'updateState', payload: { hasMoreMsg: false } })
                         }
+                    } else {
+                        if (msgList.length) { message.info('没有更多消息了') }
+                        yield put({ type: 'updateState', payload: { hasMoreMsg: false } })
                     }
                     break
                 case READ: // 更新已读

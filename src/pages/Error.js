@@ -7,8 +7,7 @@ const Error = () => (
   <Page inner>
     <div className={styles.error}>
       <FrownOutlined />
-      <h1>Error Page</h1>
-      <h1>Sorry you have no permission to view our best web in universe</h1>
+      <h1>抱歉，您无权限查看该页面！若要查看，请联系系统管理员</h1>
     </div>
   </Page>
 )

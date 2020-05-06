@@ -37,28 +37,34 @@ export const getColumns = function (editing, phoneValue) {
       dataIndex: 'name',
       width: 200,
       render: (text, row) => {
-        const { id: editingId = '' } = editing
-        const { id = '' } = row
-        const name = 'name'
-
-        if (editingId === id) {
-          return (
-            <Input
-              maxLength={30}
-              defaultValue={text}
-              style={{ /* width: '200px', */ /* marginLeft: '-12px',height:'28px' */ }}
-              onChange={(event) => {
-                const { target = {} } = event
-                const { value = '' } = target || {}
-                this.handleUpdateFields({ name, value })
-              }}
-            />)
-        }
         return (
           <div style={{ width: '200px' }}>
             <LinesEllipsis text={text} maxLine="1" />
           </div>
         )
+
+        // const { id: editingId = '' } = editing
+        // const { id = '' } = row
+        // const name = 'name'
+
+        // if (editingId === id) {
+        //   return (
+        //     <Input
+        //       maxLength={30}
+        //       defaultValue={text}
+        //       style={{ /* width: '200px', */ /* marginLeft: '-12px',height:'28px' */ }}
+        //       onChange={(event) => {
+        //         const { target = {} } = event
+        //         const { value = '' } = target || {}
+        //         this.handleUpdateFields({ name, value })
+        //       }}
+        //     />)
+        // }
+        // return (
+        //   <div style={{ width: '200px' }}>
+        //     <LinesEllipsis text={text} maxLine="1" />
+        //   </div>
+        // )
       },
     },
     {
@@ -66,28 +72,34 @@ export const getColumns = function (editing, phoneValue) {
       dataIndex: 'express_code',
       width: 200,
       render: (text, row) => {
-        const { id: editingId = '' } = editing
-        const { id = '' } = row
-        const name = 'express_code'
-
-        if (editingId === id) {
-          return (
-            <Input
-              maxLength={32}
-              defaultValue={text}
-              style={{ /* width: '200px', */ /* marginLeft: '-12px',height:'28px' */ }}
-              onChange={(event) => {
-                const { target = {} } = event
-                const { value = '' } = target || {}
-                this.handleUpdateFields({ name, value })
-              }}
-            />)
-        }
         return (
           <div style={{ width: '200px' }}>
             <LinesEllipsis text={text} maxLine="1" />
           </div>
         )
+
+        // const { id: editingId = '' } = editing
+        // const { id = '' } = row
+        // const name = 'express_code'
+
+        // if (editingId === id) {
+        //   return (
+        //     <Input
+        //       maxLength={32}
+        //       defaultValue={text}
+        //       style={{ /* width: '200px', */ /* marginLeft: '-12px',height:'28px' */ }}
+        //       onChange={(event) => {
+        //         const { target = {} } = event
+        //         const { value = '' } = target || {}
+        //         this.handleUpdateFields({ name, value })
+        //       }}
+        //     />)
+        // }
+        // return (
+        //   <div style={{ width: '200px' }}>
+        //     <LinesEllipsis text={text} maxLine="1" />
+        //   </div>
+        // )
       },
     },
     {

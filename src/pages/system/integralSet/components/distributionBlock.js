@@ -2,7 +2,7 @@ import { CloseCircleFilled, PlusOutlined } from '@ant-design/icons';
 import { Select, Input, InputNumber } from 'antd';
 import { IconFont, InputNumberGroup } from 'components'
 import arrowImg from 'assets/images/arrow.png'
-import headImg from 'assets/images/head.png'
+import headImg from 'assets/images/distribution.png'
 import styles from './distributionBlock.less'
 const Option = Select.Option
 
@@ -22,26 +22,6 @@ const ABC = [
   'M',
   'N',
 ]
-
-// eslint-disable-next-line valid-jsdoc
-/**
- * @param {*}
- * type:1 分销 2 代理
- */
-
-
-export const getOptions = () => {
-  return [
-    {
-      name: '直接&间接',
-      value: 1,
-    },
-    {
-      name: '直接推荐',
-      value: 2,
-    },
-  ].map(it => <Option key={it.value}>{it.name}</Option>)
-}
 
 const intergralOptions = [
   {
@@ -68,7 +48,7 @@ export const getIntergralOptions = () => {
 }
 
 export default function ({ item, index, onChange, length, type }) {
-  const COLORS = type === 1 ? ['#C7E7FC', '#42A7E9'] : ['#F7DBDB', '#F05959']
+  const COLORS = ['#DDF0FF', '#49A1EE']
   const TEXTS = '用户'
 
   const add = () => {
@@ -132,8 +112,8 @@ export default function ({ item, index, onChange, length, type }) {
             <div
               className={styles.rightBall}
               style={{
-                backgroundColor: index === 0 ? '#FFF4B8' : COLORS[0],
-                color: index === 0 ? '#D7984B' : COLORS[1],
+                backgroundColor: index === 0 ? '#FFE2D5' : COLORS[0],
+                color: index === 0 ? '#D4755F' : COLORS[1],
               }}>
 
               {index === 0 ? '消费者' : `${TEXTS}${ABC[index - 1]}`}

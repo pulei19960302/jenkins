@@ -24,7 +24,14 @@ class CouponDetails extends PureComponent {
         pageSize: 20,
       },
       searchFields: detailsSearchFields,
+      loading: false,
     }
+  }
+
+  toggleLoading = () => {
+    this.setState((prevState) => ({
+      loading: !prevState.loading
+    }))
   }
 
   UNSAFE_componentWillReceiveProps(nextprops) {
@@ -75,7 +82,7 @@ class CouponDetails extends PureComponent {
 
   render() {
     const { visible } = this.props
-    const { list, pagination } = this.state
+    const { list, pagination, loading } = this.state
     const { onSearch, getList } = this
 
     return (
@@ -92,8 +99,8 @@ class CouponDetails extends PureComponent {
             getList={getList}
             onSearch={onSearch}
             pagination={pagination}
-            pageProps={{ width: 1000, right: 0 }}
-            // loading={loading.effects[`couponList/getList`]}
+            pageProps={{ stylePros: { width: 1000, right: 0 } }}
+            loading={loading}
             columns={getDetailsColumns()}
             searchFields={detailsSearchFields}
           // mutipulClick={mutipulClick}

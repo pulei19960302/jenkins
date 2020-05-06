@@ -5,7 +5,7 @@ import { Page, PageTitle, SearchForm, Pagination } from 'components'
 import { getSearchFields } from './components/fields'
 import { List, Result } from './components'
 
-@connect(({ app, sendGoods, loading }) => ({ app, sendGoods, loading }))
+@connect(({ sendGoods, loading }) => ({ sendGoods, loading }))
 class sendGoods extends PureComponent {
   state = {
   }
@@ -41,11 +41,11 @@ class sendGoods extends PureComponent {
   }
 
   render() {
-    const { loading, sendGoods, app } = this.props
+    const { loading, sendGoods } = this.props
     const { pagination, list, query, result } = sendGoods
     const searchFormProps = {
       search: query,
-      fields: getSearchFields(app.enums.order_type, app.enums.order_source),
+      fields: getSearchFields(),
       onSearch: this.handleSearch,
     }
     const btns = [

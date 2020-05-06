@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react'
 import { CloseCircleFilled, PlusOutlined } from '@ant-design/icons';
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
-import {  Select, Button, Row } from 'antd';
+import { Select, Button, Row } from 'antd';
 import { createUUID } from 'utils'
 import styles from './index.less'
 const FormItem = Form.Item
@@ -31,7 +31,7 @@ class RebatePattern extends PureComponent {
     this.state = {}
   }
   render() {
-    const { form, rebatePatternChange, patternItems } = this.props
+    const { form, rebatePatternChange, patternItems, rebateConfigs } = this.props
     let selecetValueAry = patternItems.flat().map(({ value }) => value)
 
     return (
@@ -52,6 +52,7 @@ class RebatePattern extends PureComponent {
                         index2={index2}
                         length={arr.length}
                         selecetValues={selecetValueAry}
+                        rebateConfigs={rebateConfigs}
                       />
                     ))
                   }
@@ -73,7 +74,8 @@ const GeneratePatternsItem = function ({
   index1,
   index2,
   item,
-  length
+  length,
+  rebateConfigs
 }) {
   const patternChange = e => {
     rebatePatternChange('change', index1, index2, {
@@ -91,13 +93,23 @@ const GeneratePatternsItem = function ({
     <Fragment>
       {index2 !== 0 && <span style={{ margin: '0 10px' }}>和</span>}
       <div style={{ width: '150px', position: 'relative' }}>
+  
         <Select
           onChange={patternChange}
           placeholder="请选择返利模式"
           defaultValue={item.value}
           style={{ width: 150, marginRight: 10 }}
         >
-          {GeneratePatterns(selecetValues)}
+
+          {
+            rebateConfigs.map(it => (
+              <Option key={it.value} value={it.value} disabled={selecetValues.includes(it.value)}>
+                {it.name}
+              </Option>
+            ))
+
+          }
+
         </Select>
         <CloseCircleFilled
           onClick={onDel}
@@ -108,14 +120,6 @@ const GeneratePatternsItem = function ({
       }
     </Fragment>
   );
-}
-
-const GeneratePatterns = function (selecetValues) {
-  return PATTERNS.map(it => (
-    <Option key={it.value} value={it.value} disabled={selecetValues.includes(it.value)}>
-      {it.name}
-    </Option>
-  ))
 }
 
 export default RebatePattern

@@ -14,4 +14,6 @@ export default {
   deleteInsurance: 'POST /insurance/delete',
   updateInsurance: 'POST /insurance/update',
   addInsurance: 'POST /insurance/add',
+
+  expressList: '/express/add-list', //新增物流公司下拉列表
 }

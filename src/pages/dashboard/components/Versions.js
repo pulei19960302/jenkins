@@ -13,13 +13,14 @@ class Versions extends PureComponent {
   render() {
     return (
       <div className={`${styles.vesions} fs12 ${styles.colorDark}`}>
-        <div className={`${styles.title} mb5`}>
+        <div className={styles.title}>
           版本信息
         </div>
         <div>
           <label className={styles.colorLight}>当前版本&nbsp;:&nbsp;</label>
           <span className={styles.versionNum}>
-            <a onClick={() => { this.handleRoute('') }}>V1.0.0_beta</a>
+            V1.0.0_beta
+            {/* <a onClick={() => { this.handleRoute('') }}>V1.0.0_beta</a> */}
           </span>
         </div>
         <div>

@@ -16,6 +16,10 @@ class conversation extends PureComponent {
                 type: `conversation/updateState`,
                 payload: { customerList: [], msgList: [], activeKey: "", showSearchList: false, page: 1, sort_type: 1 },
             })
+            this.props.dispatch({
+                type: `app/updateState`,
+                payload: { isLogout: false },
+            })
         }
         this.props.dispatch({ type: 'conversation/socketInit' })
     }

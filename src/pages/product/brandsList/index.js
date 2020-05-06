@@ -5,7 +5,7 @@ import CommonTable from 'components/CommonTable'
 import { getColumns, searchFields } from './components/fields'
 import BrandsDetails from './components/BrandsDetails'
 import BrandsEdit from './components/BrandsEdit'
-import { Modal, Button, Radio } from 'antd'
+import { Modal, Radio } from 'antd'
 @connect(({ user, brandsList, loading }) => ({
   user,
   loading,

@@ -34,7 +34,7 @@ class BaseInfo extends PureComponent {
                                 name={['base_data', 'title']}
                                 rules={[{ required: true, message: '请填写商品名称' }]}
                             >
-                                <TextArea placeholder="请填写商品名称(限100字)" autosize={{ minRows: 4, maxRows: 6 }} maxLength={100} />
+                                <TextArea placeholder="请填写商品名称(限100字)" autoSize={{ minRows: 2, maxRows: 2 }} maxLength={100} />
                             </Form.Item>
                         </Col>
                         <Col span={8}>
@@ -42,7 +42,7 @@ class BaseInfo extends PureComponent {
                                 label="副标题"
                                 name={['base_data', 'sub_title']}
                             >
-                                <TextArea placeholder="请填写副标题(限300字)" autosize={{ minRows: 4, maxRows: 6 }} maxLength={50} />
+                                <TextArea placeholder="请填写副标题(限300字)" autoSize={{ minRows: 2, maxRows: 2 }} maxLength={300} />
                             </Form.Item>
                         </Col>
                         <Col span={8}>
@@ -158,7 +158,7 @@ class BaseInfo extends PureComponent {
                                     label="预上架时间"
                                     rules={[{ required: true, message: "请选择预上架时间" }]}
                                 >
-                                    <DatePicker showTime placeholder="请选择预上架时间" />
+                                    <DatePicker showTime placeholder="请选择预上架时间" getPopupContainer={triggerNode => triggerNode.parentElement} />
                                 </Form.Item>
                             }
                         </Col>
@@ -185,7 +185,7 @@ class BaseInfo extends PureComponent {
                                     label="预下架时间"
                                     rules={[{ required: true, message: "请选择预下架时间" }]}
                                 >
-                                    <DatePicker showTime placeholder="请选择预下架时间" />
+                                    <DatePicker showTime placeholder="请选择预下架时间" getPopupContainer={triggerNode => triggerNode.parentElement} />
                                 </Form.Item>
                             }
                         </Col>

@@ -1,7 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
-import { FormOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons';
-import { Icon as LegacyIcon } from '@ant-design/compatible';
-import { Menu, Layout, Avatar } from 'antd';
+import { FormOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons'
+import { Icon as LegacyIcon } from '@ant-design/compatible'
+import { Menu, Layout, Avatar } from 'antd'
+import { IconFont } from 'components'
 import classnames from 'classnames'
 import styles from './Header.less'
 
@@ -22,13 +23,11 @@ class Header extends PureComponent {
             <Fragment>
               <span style={{ color: '#999', marginRight: 4 }}>欢迎您,{name}</span>
               <span>{contact}</span>
-              {!avatar && (
-                <Avatar
-                  style={{ marginLeft: 8 }}
-                  icon={<UserOutlined />}
-                  className="avatar"
-                />
-              )}
+              {
+                !avatar && (
+                  <IconFont type='iconhoutaitouxiang' className={styles.defaultAvator}></IconFont>
+                )
+              }
               {avatar && <Avatar style={{ marginLeft: 8 }} src={avatar} />}
             </Fragment>
           }
@@ -37,7 +36,7 @@ class Header extends PureComponent {
             <FormOutlined />
             账户设置
           </Menu.Item>
-          <Menu.Item key="SignOut" style={{color: '#F5222D'}}>
+          <Menu.Item key="SignOut" style={{ color: '#F5222D' }}>
             <LogoutOutlined />
             退出
           </Menu.Item>

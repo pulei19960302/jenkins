@@ -5,6 +5,7 @@ import '@ant-design/compatible/assets/index.css';
 import { Input, Switch, Select, Button, Row, Col, InputNumber, Card, Message } from 'antd';
 import RebatePattern, { getPatternItems } from './rebatePattern'
 import UpgradeCondition from './upgradeCondition'
+import { createUUID } from 'utils'
 const FormItem = Form.Item
 
 @Form.create()
@@ -15,7 +16,9 @@ class UserLevelSet extends PureComponent {
       conditionItems: [],
       patternItems: [],
       loading: false,
-      is_auto: 0
+      is_auto: 0,
+
+      rebateConfigs: []
     }
   }
   componentDidMount() {
@@ -23,7 +26,8 @@ class UserLevelSet extends PureComponent {
     const sort = this.props.history.location.query.sort
     if (id !== undefined) {
       $api.user.userLevelDetail({ id }).then(res => {
-        const { sort, name } = res.data
+        console.log("datadatadatadatadatadata", res.data)
+        const { sort, name, rebate_configs } = res.data
         const { data } = res.data
         const { upgrade, rebate } = data
         const { is_auto, is_verify } = upgrade
@@ -31,12 +35,18 @@ class UserLevelSet extends PureComponent {
         setTimeout(() => {
           form.setFieldsValue({ sort, name, is_auto, is_verify })
         }, 0)
+
         const patternItems = rebate.rule.reduce((a, b) => {
-          a.push(Object.keys(b).map(it => {
-            return getPatternItems(it)
-          }))
-          return a
+          let c = []
+          Object.keys(b).forEach(it => {
+            if (rebate_configs[it]) {
+              c.push(getPatternItems(it))
+            }
+          })
+
+          return c.length > 0 && a.push(c), a
         }, [])
+
         const conditionItems = upgrade.rule.reduce((a, b) => {
           a.push(Object.keys(b).map(it => {
             if (it === 'goods_ids') {
@@ -46,9 +56,18 @@ class UserLevelSet extends PureComponent {
           }))
           return a
         }, [])
+
         this.setState({
-          patternItems, conditionItems, is_auto
+          patternItems, conditionItems, is_auto,
+          rebateConfigs: Object.entries(rebate_configs).map(([value, name]) => ({
+            name, value,
+            uuid: createUUID()
+          }))
         })
+      }).catch(err => {
+        setTimeout(() => {
+          this.props.history.replace('/user/userLevel')
+        }, 2500)
       })
     }
     if (sort) {
@@ -62,17 +81,18 @@ class UserLevelSet extends PureComponent {
   rebatePatternChange = (key, index1, index2, res = {}) => {
     const patternItems = JSON.parse(JSON.stringify(this.state.patternItems))
     let length = patternItems.flat().length
+    let maxLen = this.state.rebateConfigs.length
 
     switch (key) {
       case 'addPlus':
-        if (length < 4) {
+        if (length < maxLen) {
           patternItems.push(res)
         } else {
           Message.warning('选项数量已达上限');
         }
         break
       case 'add':
-        if (length < 4) {
+        if (length < maxLen) {
           patternItems[index1].push(res)
         } else {
           Message.warning('选项数量已达上限');
@@ -149,7 +169,7 @@ class UserLevelSet extends PureComponent {
                     if (item.value === 'goods_ids') {
                       item.params = item.params.split(',')
                     }
-                    result[item.value] = item.params
+                    result[item.value] = item.params === '' ? '' : +item.params
                   }
                 })
                 return result
@@ -182,7 +202,7 @@ class UserLevelSet extends PureComponent {
     const { form } = this.props
     const { getFieldDecorator } = form
     const { rebatePatternChange, upgradeConditionChange, submit } = this
-    const { conditionItems, patternItems, loading } = this.state
+    const { conditionItems, patternItems, loading, rebateConfigs } = this.state
     const formItemLayout = {
       labelCol: { span: 3 },
       wrapperCol: { span: 6 },
@@ -243,6 +263,7 @@ class UserLevelSet extends PureComponent {
             <RebatePattern
               patternItems={patternItems}
               rebatePatternChange={rebatePatternChange}
+              rebateConfigs={rebateConfigs}
             ></RebatePattern>
           </Card>
         </Form>

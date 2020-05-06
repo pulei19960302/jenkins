@@ -11,14 +11,19 @@ import styles from './index.less'
 @connect(({ suppilerDetails, loading }) => ({ suppilerDetails, loading }))
 class SupplierDetails extends PureComponent {
   componentDidMount() {
-    const { payload = {} } = this.props.history.location
-    payload && this.getList(payload)
+    /* {id: '', supplier_id: ''} */
+    const { query = {} } = this.props.history.location
+    query && this.getList(query)
   }
 
   onSearch = (payload) => {
     const { dispatch } = this.props
-    dispatch({ type: 'suppilerDetails/onSearch', payload, })
-    dispatch({ type: 'suppilerDetails/getList', payload, })
+    const { query: params = {} } = this.props.history.location
+    dispatch({ type: 'suppilerDetails/onSearch', payload })
+    dispatch({
+      type: 'suppilerDetails/getList',
+      payload
+    })
   }
 
   getList = (payload) => {
@@ -34,8 +39,8 @@ class SupplierDetails extends PureComponent {
   }
 
   renderTitles() {
-    const { payload = {} } = this.props.history.location
-    const { supplier_id = '' } = payload || {}
+    const { query = {} } = this.props.history.location
+    const { supplier_id = '' } = query || {}
     const { suppilerDetails = {} } = this.props
     const { sum = {} } = suppilerDetails
     const { total = '', settle = '', settlement = '' } = sum || {}
@@ -63,18 +68,20 @@ class SupplierDetails extends PureComponent {
   }
 
   renderList() {
+    const { query: params = {} } = this.props.history.location
     const { suppilerDetails, loading } = this.props
-    const { list = [], pagination, query, type } = suppilerDetails
-    const exportProps = {
+    const { list = [], pagination, query: oldQuery = {}, type } = suppilerDetails
+    const query = { ...params, ...oldQuery }
+    const exportProps = [{
       type: 'export',
       name: '导出',
       url: $api.finance.detailExport.url,
       query,
       permission: hasBtn('detailExport'),
-    }
+    }].filter(el => el.permission)
     const searchProp = {
       search: query,
-      BtnGroup: (<BtnGroup btns={[exportProps]} />)
+      BtnGroup: (<BtnGroup btns={exportProps} />)
     }
 
     return (

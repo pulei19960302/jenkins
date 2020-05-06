@@ -24,7 +24,7 @@ const ShopInformation = () => {
     }
     getBaseInfo();
     if (tab === SHOP_TABS.SHOP) {
-      setAuth($api.system.saveCompanyBase.permission())
+      setAuth($api.system.saveCompany.permission())
     }
   }, [tab])
 

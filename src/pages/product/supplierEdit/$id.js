@@ -326,7 +326,7 @@ class SupplierEdit extends PureComponent {
                       message: '请选择省/市/区',
                     },
                   ],
-                })(<ChooseAddress placeholder="请选择地址" onChangeLabel={this.handleChangeAddressLabel} />)}
+                })(<ChooseAddress getPopupContainer={triggerNode => triggerNode.parentElement} placeholder="请选择地址" onChangeLabel={this.handleChangeAddressLabel} />)}
               </FormItem>
             </Col>
             <Col span={24} pull={2}>
@@ -424,6 +424,7 @@ class SupplierEdit extends PureComponent {
                     mode="multiple"
                     style={{ width: '100%' }}
                     placeholder="请选择品牌"
+                    getPopupContainer={triggerNode => triggerNode.parentElement}
                   >
                     {brandsList &&
                       brandsList.map(it => {

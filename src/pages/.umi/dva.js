@@ -21,8 +21,8 @@ export function _onCreate() {
   });
   app.use(require('../../plugins/api.js').default);
 app.use(require('../../plugins/onError.js').default);
-app.use(require('/Users/pulei/code/web/project/HHYC/ecs-web/node_modules/dva-immer/dist/index.js')());
-  app.model({ namespace: 'app', ...(require('/Users/pulei/code/web/project/HHYC/ecs-web/src/models/app.js').default) });
+app.use(require('D:/project/ecs-web/node_modules/dva-immer/dist/index.js')());
+  app.model({ namespace: 'app', ...(require('D:/project/ecs-web/src/models/app.js').default) });
   return app;
 }
 

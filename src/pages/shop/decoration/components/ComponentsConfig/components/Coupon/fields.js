@@ -25,23 +25,23 @@ const showTpList = [
 const colors = [
     {
         id: 1,
-        color: '#FF533B'
+        color: ['#FF7C75', '#EA4A56']
     },
     {
         id: 2,
-        color: '#FE8D1E'
+        color: ['#F4AC80', '#F35C44']
     },
     {
         id: 3,
-        color: '#7D69E2'
+        color: ['#D78AF0', '#B83FEB']
     },
     {
         id: 4,
-        color: '#57BD48'
+        color: ['#79DDB4', '#3ACA8B']
     },
     {
         id: 5,
-        color: '#444444'
+        color: ['#999999', '#363636']
     }
 ]
 
@@ -56,7 +56,7 @@ export const getTplList = function (type, activeId) {
 export const getColors = function (activeColor) {
     if (activeColor) {
         colors.forEach(it => {
-            if (it.color === activeColor) {
+            if (it.color.join(",") === (typeof activeColor === 'string'? activeColor : activeColor.join(","))) {
                 it.active = true
             } else {
                 it.active = false

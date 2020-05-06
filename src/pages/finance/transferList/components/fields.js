@@ -70,7 +70,7 @@ export const getSearchFields = function (types, payWay) {
     },
     {
       key: 'member_id',
-      placeholder: '客户ID',
+      placeholder: '用户ID',
     },
     {
       key: 'order_no',
@@ -100,14 +100,14 @@ export const getColumns = function (payWay) {
       dataIndex: 'order_no',
     },
     {
-      title: '客户账号',
+      title: '用户名 / ID',
       dataIndex: 'nickname',
       render: (text, row) => (
-        <span>{text}&nbsp;({row.member_id})</span>
+        <span>{text}&nbsp;/&nbsp;{row.member_id}</span>
       ),
     },
     {
-      title: '提现金额',
+      title: '交易金额',
       dataIndex: 'money',
       money: true,
     },

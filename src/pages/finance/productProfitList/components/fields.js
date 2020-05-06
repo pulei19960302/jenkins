@@ -73,7 +73,7 @@ export const getColumns = function () {
       title: () => {
         return (
           <span className={styles.title}>
-            销售金额
+            下单金额
             {/* <Popover content=""> */}
               <QuestionCircleFilled className={styles.questionIcon} />
             {/* </Popover> */}

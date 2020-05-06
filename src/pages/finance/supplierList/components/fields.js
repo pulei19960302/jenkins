@@ -19,7 +19,7 @@ export const getSearchFields = function (status) {
   return [
     {
       key: 'supplier',
-      placeholder: '供应商ID/供应商名称',
+      placeholder: '供应商名称/ID',
     },
     {
       key: 'status',
@@ -53,10 +53,10 @@ export const getColumns = function (status) {
       dataIndex: 'id',
     },
     {
-      title: '供应商名称',
+      title: '供应商名称 / ID',
       dataIndex: 'supplier_name',
       render: (text, row) => (
-        <span>{text}&nbsp;({row.supplier_id})</span>
+        <span>{text}&nbsp;/&nbsp;{row.supplier_id}</span>
       ),
     },
     {
@@ -104,11 +104,11 @@ export const getColumns = function (status) {
     },
     {
       title: '备注',
-      width: 200,
+      width: 120,
       dataIndex: 'remark',
       render: (text) => {
         return (
-          <div style={{ width: '200px' }}>
+          <div style={{ width: '120px' }}>
             <LinesEllipsis text={text} maxLine="1" />
           </div>
         )
@@ -123,7 +123,7 @@ export const getColumns = function (status) {
             {
               hasBtn('suppilerDetails') && (
                 <span>
-                  <a onClick={() => { this.handleViewDetails(row) }}>结算明细</a>
+                  <a onClick={() => { this.handleViewDetails(row) }}>货款明细</a>
                   <Divider type="vertical" />
                 </span>
               )

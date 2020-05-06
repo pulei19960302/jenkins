@@ -15,13 +15,13 @@ class BrandsEdit extends PureComponent {
     this.state = {
       editData: {},
       logoData: [],
+      id: null,
     }
   }
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.editData !== nextProps.editData) {
       const { id, name, alias, logo, description, sort } = nextProps.editData
       this.props.form.setFieldsValue({
-        id,
         name,
         alias,
         logo,
@@ -31,10 +31,12 @@ class BrandsEdit extends PureComponent {
       if (logo) {
         this.setState({
           logoData: logo,
+          id,
         })
       }else{
         this.setState({
           logoData: '',
+          id,
         })
       }
     }
@@ -43,11 +45,13 @@ class BrandsEdit extends PureComponent {
     this.props.toogle(false)
   }
   handleOk = () => {
+    const { id } = this.state;
     this.props.form.validateFields((err, values) => {
       if (err) {
         return
       }
-      this.props.create(values)
+      const requestBody = id ? Object.assign(values, id) : values
+      this.props.create(requestBody)
     })
   }
   logoChange(result) {
@@ -61,7 +65,7 @@ class BrandsEdit extends PureComponent {
     const { getFieldDecorator } = form
     const { logoData } = this.state
     const formItemLayout = {
-      labelCol: { span: 4 },
+      labelCol: { span: 6 },
       wrapperCol: { span: 14 },
     }
     const licenseProps = {
@@ -75,6 +79,7 @@ class BrandsEdit extends PureComponent {
         visible={visible}
         onOk={this.handleOk}
         onCancel={this.handleCancel}
+        width='550px'
       >
         <Form {...formItemLayout}>
           <FormItem

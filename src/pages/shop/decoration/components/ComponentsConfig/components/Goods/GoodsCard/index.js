@@ -1,4 +1,4 @@
-import React,{PureComponent,Fragment} from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import Block from '../../Block'
 import { getTplList } from './fields'
 import GoodsTpl from '../components/GoodsTpl'
@@ -7,87 +7,90 @@ import GoodsStyle from '../components/GoodsStyle'
 import styles from './index.less'
 
 
-class GoodsCard extends PureComponent{
+class GoodsCard extends PureComponent {
     static component_id = '7'
     state = {
-        tplList:getTplList(1),
-        content:{},
-        id:null,
-        goodsChoosedDetail:[],
+        tplList: getTplList(1),
+        content: {},
+        id: null,
+        goodsChoosedDetail: [],
+        templateId: 0
     }
     static getDerivedStateFromProps(nextProps, prevState) {
         const { activeComponent } = nextProps
-        const { id,content } = activeComponent
-        if(prevState.id!==id){
+        const { id, content } = activeComponent
+        if (prevState.id !== id) {
             return {
-                tplList:getTplList(1,content.template_id),
+                tplList: getTplList(1, content.template_id),
                 content,
                 id,
+                templateId: content.template_id
             }
         }
-        return null
+        return { templateId: content.template_id}
     }
-    componentDidMount(){
+    componentDidMount() {
         const { activeComponent } = this.props
         const { content } = activeComponent
-        if(content.goodsChoosed.length){
+        if (content.goodsChoosed.length) {
             this.findGoods(content.goodsChoosed)
         }
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
         this.destorySubmit()
     }
 
-    destorySubmit=()=>{
-        const { content,goodsChoosedDetail } = this.state
+    destorySubmit = () => {
+        const { content, goodsChoosedDetail } = this.state
         this.submit({
             ...content,
-            goodsChoosed:goodsChoosedDetail.map(it=>it.goods_id),
+            goodsChoosed: goodsChoosedDetail.map(it => it.goods_id),
         })
     }
-    submit(payload){
+    submit(payload) {
         const { id } = this.state
-        this.props.submit(id,payload)
+        this.props.submit(id, payload)
     }
-    findGoods=(choosedGoods)=>{
+    findGoods = (choosedGoods) => {
         $api.product.productGetByIds({
-            goods_ids:choosedGoods
-        }).then(res=>{
+            goods_ids: choosedGoods
+        }).then(res => {
             this.setState({
-                goodsChoosedDetail:res.data || []
+                goodsChoosedDetail: res.data || []
             })
         })
     }
-    tplChange=(tplList,item)=>{
+    tplChange = (tplList, item) => {
         this.setState({
             tplList
         })
-        this.submit({ template_id:item.id })
+        this.submit({ template_id: item.id })
     }
-    chooseGoodsSubmit=(choosedGoods)=>{
+    chooseGoodsSubmit = (choosedGoods) => {
         this.setState({
-            goodsChoosedDetail:choosedGoods
+            goodsChoosedDetail: choosedGoods
         })
     }
-    formChange=(key,value)=>{
+    formChange = (key, value) => {
         this.setState({
-            content:{
+            content: {
                 ...this.state.content,
-                [key]:value
+                [key]: value
             }
         })
     }
-    render(){
-        const { tplList,content,goodsChoosedDetail } = this.state
-        const { tplChange,formChange,chooseGoodsSubmit } = this
+    render() {
+        const { templateId, tplList, content, goodsChoosedDetail } = this.state
+        const { tplChange, formChange, chooseGoodsSubmit } = this
+        console.log("index>content", templateId)
         return (
             <div className={styles.GoodsCardContainer}>
-                    <GoodsTpl tplList={tplList} onActive={tplChange}></GoodsTpl>
-                    <Block title="商品添加">
-                        <GoodsListContent content={content} formChange={formChange} goodsChoosedDetail={goodsChoosedDetail} chooseGoodsSubmit={chooseGoodsSubmit}></GoodsListContent>
-                    </Block>
-                    <GoodsStyle content={content} formChange={formChange}></GoodsStyle>
-            </div> 
+                <GoodsTpl tplList={tplList} onActive={tplChange}></GoodsTpl>
+                <Block title="商品添加">
+                    <GoodsListContent content={content} formChange={formChange} goodsChoosedDetail={goodsChoosedDetail} chooseGoodsSubmit={chooseGoodsSubmit}></GoodsListContent>
+                </Block>
+                <GoodsStyle templateId={templateId} content={content} formChange={formChange}></GoodsStyle>
+            </div>
         )
     }
 }

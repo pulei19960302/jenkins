@@ -161,11 +161,15 @@ class addProduct extends PureComponent {
         const { query } = this.props.history.location
         if (query.id && !query.copy) {
             $api.product.editProduct({ ...params, goods_id: query.id }, { success: true, loadingFn: this.toggleLoading }).then(() => {
-                this.props.history.push('/product/productList')
+                setTimeout(() => {
+                    this.props.history.push('/product/productList')
+                }, 1500)
             })
         } else {
             $api.product.addProduct(params, { success: true, loadingFn: this.toggleLoading }).then(() => {
-                this.props.history.push('/product/productList')
+                setTimeout(() => {
+                    this.props.history.push('/product/productList')
+                }, 1500)
             })
         }
     }

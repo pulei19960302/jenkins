@@ -171,11 +171,11 @@ class OrderInfo extends PureComponent {
                             <Descriptions.Item label="物流跟踪"></Descriptions.Item>
                             <Timeline>
                                 {
-                                    order.logistics_info.map((el, index) => {
+                                    order.logistics_info.content.map((el, index) => {
                                         if (index === 0) {
-                                            return <Timeline.Item color="#E52C33" style={{ color: '#E52C33' }} key={index} >{el}</Timeline.Item>
+                                            return <Timeline.Item color="#E52C33" style={{ color: '#E52C33' }} key={index} >{el.time}&nbsp;{el.text}</Timeline.Item>
                                         } else {
-                                            return <Timeline.Item key={index}>{el}</Timeline.Item>
+                                            return <Timeline.Item key={index}>{el.time}&nbsp;{el.text}</Timeline.Item>
                                         }
                                     })
                                 }
@@ -194,8 +194,8 @@ class OrderInfo extends PureComponent {
                     <Empty style={{ marginTop: 100 }} image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无订单记录" />
                 }
                 {loading && <Spin style={{ margin: '100px auto', display: 'block' }} />}
-                <SendGoods {...this.getCommonProps('sendGoodsModal')} {...this.state.applyAfterSaleProps} />
-                <ApplyAfterSale {...this.getCommonProps('applyAfterSaleModal')} />
+                <SendGoods {...this.getCommonProps('sendGoodsModal')} />
+                <ApplyAfterSale {...this.getCommonProps('applyAfterSaleModal')} {...this.state.applyAfterSaleProps} />
                 <ModifyLogistics {...this.getCommonProps('modifyLogisticsModal')} />
                 <ModifyAddress {...this.getCommonProps('modifyAddressModal')} />
             </div>

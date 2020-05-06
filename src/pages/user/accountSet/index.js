@@ -102,7 +102,7 @@ class AccountSet extends PureComponent {
             <Input
               autoComplete="off"
               placeholder='请输入电子邮箱'
-              readonly />
+            />
           )}
         </Form.Item>
         <Form.Item label="旧密码">

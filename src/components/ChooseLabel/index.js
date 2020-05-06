@@ -9,7 +9,7 @@ export default function ChooseLabel({ value, onChange, placeholder = "请选择�
     useEffect(() => {
         if (init) return
         setInit(true)
-        $api.label.labelList({ no_page_flag: true }).then(res => {
+        $api.label.labelList({ no_page_flag: true, status: 1 }).then(res => {
             setList(res.data.item || [])
         })
     }, [init])

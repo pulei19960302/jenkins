@@ -1,6 +1,6 @@
 import account from 'accounting'
 import moment from 'moment'
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 import { FORMAT, TRADE_TYPES, DATE_RANGE, TRADE_STATUS_FIELDS as statusFields, BALANCE_FIELDS as balanceFields } from '../../constants'
 
 export const getSearchFields = function (type/* , timeSearchKeys */) {
@@ -35,7 +35,7 @@ export const getSearchFields = function (type/* , timeSearchKeys */) {
   return [
     {
       key: 'member_id',
-      placeholder: '请输入客户账号/客户ID搜索',
+      placeholder: '请输入用户名/ID搜索',
     },
     {
       key: 'type',
@@ -58,9 +58,9 @@ export const getSearchFields = function (type/* , timeSearchKeys */) {
     },
     {
       key: 'timeType',
-      placeholder: '交易初始时间',
+      placeholder: '交易开始时间',
       enums: [
-        { value: 0, name: '交易初始时间' },
+        { value: 0, name: '交易开始时间' },
         { value: 1, name: '交易完成时间' }
       ],
       inputProps: {
@@ -89,18 +89,18 @@ export const getSearchFields = function (type/* , timeSearchKeys */) {
 export const getColumns = function (type) {
   return [
     {
-      title: '交易初始时间',
+      title: '交易开始时间',
       dataIndex: 'created_at',
       render: (text, row) => (
         <span>{text && moment(text * 1000).format(FORMAT.DATETIME)}</span>
       )
     },
     {
-      title: '客户账号',
+      title: '用户名 / ID',
       width: '200',
       dataIndex: 'nickname',
       render: (text, row) => {
-        return <span>{text}&nbsp;({row.member_id})</span>
+        return <span>{text}&nbsp;/&nbsp;{row.member_id}</span>
       },
     },
     {
@@ -122,7 +122,7 @@ export const getColumns = function (type) {
             return (
               <div>
                 <span>
-                  <ArrowRightOutlined style={{ color: '#70b603', fontSize: '12px' }} />
+                  <PlusOutlined style={{ color: '#70b603', fontSize: '12px' }} />
                   &nbsp;{account.formatMoney(Math.abs(text), '￥')}
                 </span>
               </div>
@@ -135,7 +135,7 @@ export const getColumns = function (type) {
             return (
               <div>
                 <span>
-                  <ArrowLeftOutlined style={{ color: '#d9001b', fontSize: '12px' }} />
+                  <MinusOutlined style={{ color: '#d9001b', fontSize: '12px' }} />
                   &nbsp;{account.formatMoney(Math.abs(text), '￥')}
                 </span>
               </div>
@@ -144,7 +144,7 @@ export const getColumns = function (type) {
             return (
               <div>
                 <span>
-                  <ArrowRightOutlined style={{ color: '#70b603', fontSize: '12px' }} />
+                  <PlusOutlined style={{ color: '#70b603', fontSize: '12px' }} />
                   &nbsp;{account.formatMoney(Math.abs(text), '￥')}
                 </span>
               </div>

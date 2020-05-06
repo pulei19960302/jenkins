@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[2],{w2l6:function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),r=a.n(t),l=a("hPKT"),c=a("Kvkj"),o=a("6vZr"),u=a.n(o),i=function(){return r.a.createElement(c["x"],{inner:!0},r.a.createElement("div",{className:u.a.error},r.a.createElement(l["a"],null),r.a.createElement("h1",null,"404 Not Found")))};n["default"]=i}}]);

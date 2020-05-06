@@ -193,7 +193,7 @@ class SpecsInfo extends PureComponent {
             </div>
         )
         return (
-            <Popover content={Content} title="批量填写于" trigger="hover" placement="left">
+            <Popover content={Content} title="批量填写于" trigger="hover" placement="left" getPopupContainer={triggerNode => triggerNode.parentElement}>
                 <Button className="btnGhostPrimary">应用</Button>
             </Popover>
         )

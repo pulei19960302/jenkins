@@ -89,7 +89,7 @@ const NormsModal = ({handleSubmit, handleCancel, initForm = { values: [] } }) =>
   const modalProps = {
     title: initForm.attr_item_id ? '编辑规格' : '新增规格',
     visible: true,
-    width: 500,
+    width: 580,
     maskClosable: false,
     confirmLoading: loading,
     destroyOnClose: true,

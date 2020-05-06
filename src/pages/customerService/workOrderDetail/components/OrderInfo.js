@@ -57,11 +57,11 @@ class OrderInfo extends PureComponent {
 
           <Timeline>
             {
-              order.logistics_info.map((el, index) => {
+              order.logistics_info.content.map((el, index) => {
                 if (index === 0) {
-                  return <Timeline.Item color="#E52C33" style={{ color: '#E52C33' }}>{el}</Timeline.Item>
+                return <Timeline.Item color="#E52C33" style={{ color: '#E52C33' }}>{el.time}&nbsp;{el.text}</Timeline.Item>
                 } else {
-                  return <Timeline.Item>{el}</Timeline.Item>
+                  return <Timeline.Item>{el.time}&nbsp;{el.text}</Timeline.Item>
                 }
               })
             }

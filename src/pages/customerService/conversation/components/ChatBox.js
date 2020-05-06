@@ -182,6 +182,11 @@ class ChatBox extends PureComponent {
             }
         }
     }
+    isDisabled = () => {
+        const { activeKey, customerList, customerServiceStatus } = this.props.conversation
+        let customer = customerList.find(el => el.key === activeKey) || {}
+        return !activeKey || customer.conversation_status === 2 || customerServiceStatus === 0
+    }
     render() {
         const { showEmojiPanel, textValue } = this.state
         const { activeKey, customerList, } = this.props.conversation
@@ -225,7 +230,7 @@ class ChatBox extends PureComponent {
                         </div>
                         <IconFont type="iconbiaoqing" onClick={() => this.toogleEmoji(true)} className={styles.icon} />
                         <UploadFile
-                            disabled={!activeKey}
+                            disabled={this.isDisabled()}
                             index={1}
                             uploadStatus={this.uploadStatus}
                             uploadButton={<IconFont type="icontupian" />}
@@ -244,7 +249,7 @@ class ChatBox extends PureComponent {
                         <Button
                             type="primary"
                             className={styles.subBtn}
-                            disabled={!activeKey || !textValue || customer.conversation_status === 2}
+                            disabled={!textValue || this.isDisabled()}
                             onClick={this.send}>
                             发送</Button>
                     </div>

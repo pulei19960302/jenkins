@@ -117,7 +117,9 @@ class AddLabel extends PureComponent {
                 styleList.map((it, index) => {
                   return (
                     <Col className="gutter-row" span={6} key={index} onClick={this.selectStyle.bind(this, it, index)}>
-                      <div style={{background: (it.background), color: (it.textColor), border: `1px solid ${it.borderColor}`}} className={`${styles.style_box} ${it.isSelect?styles.select_box:''}`}>文字</div>
+                      <div className={`${styles.big_box} ${it.isSelect?styles.select_box:''}`}>
+                        <div style={{background: (it.background), color: (it.textColor), border: `${!!it.borderColor ? `1px solid ${it.borderColor}` : ''}`}} className={`${styles.style_box} ${it.isSelect?styles.select_box:''}`}>文字</div>
+                      </div>
                     </Col>
                   )
                 })

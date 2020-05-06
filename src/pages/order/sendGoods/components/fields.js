@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-export const getSearchFields = (orderType=[],orderSource=[]) => {
+export const getSearchFields = () => {
   return [
     {
       key: 'order_sn',
@@ -24,23 +24,26 @@ export const getSearchFields = (orderType=[],orderSource=[]) => {
     },
     {
       key: 'nick_name',
-      placeholder: '客户昵称',
+      placeholder: '用户名',
     },
     {
       key: 'user_id',
-      placeholder: '客户账号',
-    },
-    {
-      key: 'type',
-      placeholder: '订单类型',
-      type: 'enum',
-      enums: orderType,
+      placeholder: '用户账号',
     },
     {
       key: 'from',
       placeholder: '渠道',
       type: 'enum',
-      enums: orderSource,
+      enums: [{
+        "value": 1,
+        "name": "微信"
+      }, {
+        "value": 2,
+        "name": "APP"
+      }, {
+        "value": 3,
+        "name": "小程序"
+      }],
     },
   ]
 }

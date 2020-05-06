@@ -85,6 +85,7 @@ class Norms extends PureComponent {
     const { list, pagination } = normsList
     const btnGroup = [
       {
+        icon: 'plus',
         name: '新增规格',
         type: 'primary',
         handleClick: () => this.addNorms(),

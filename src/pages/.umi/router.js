@@ -8,7 +8,7 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
-import RendererWrapper0 from '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/.umi/LocaleWrapper.jsx';
+import RendererWrapper0 from 'D:/project/ecs-web/src/pages/.umi/LocaleWrapper.jsx';
 import _dvaDynamic from 'dva/dynamic';
 
 const Router = require('dva/router').routerRedux.ConnectedRouter;
@@ -20,7 +20,7 @@ const routes = [
       ? _dvaDynamic({
           component: () =>
             import(/* webpackChunkName: "layouts__index" */ '../../layouts/index.js'),
-          LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+          LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
             .default,
         })
       : require('../../layouts/index.js').default,
@@ -32,22 +32,10 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__404" */ '../404.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../404.js').default,
-      },
-      {
-        path: '/Error',
-        exact: true,
-        component: __IS_BROWSER
-          ? _dvaDynamic({
-              component: () =>
-                import(/* webpackChunkName: "p__Error" */ '../Error.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
-                .default,
-            })
-          : require('../Error.js').default,
       },
       {
         path: '/customerService/conversation',
@@ -56,7 +44,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__conversation__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/conversation/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__conversation__model.js' */ 'D:/project/ecs-web/src/pages/customerService/conversation/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -64,7 +52,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__conversation__index" */ '../customerService/conversation/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/conversation/index.js').default,
@@ -76,7 +64,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__dataManage__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/dataManage/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__dataManage__model.js' */ 'D:/project/ecs-web/src/pages/customerService/dataManage/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -84,7 +72,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__dataManage__index" */ '../customerService/dataManage/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/dataManage/index.js').default,
@@ -96,7 +84,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__dispatchManage__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/dispatchManage/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__dispatchManage__model.js' */ 'D:/project/ecs-web/src/pages/customerService/dispatchManage/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -104,7 +92,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__dispatchManage__index" */ '../customerService/dispatchManage/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/dispatchManage/index.js').default,
@@ -116,7 +104,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__replayManage__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/replayManage/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__replayManage__model.js' */ 'D:/project/ecs-web/src/pages/customerService/replayManage/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -124,7 +112,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__replayManage__index" */ '../customerService/replayManage/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/replayManage/index.js').default,
@@ -136,7 +124,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__workOrderDetail__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/workOrderDetail/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__workOrderDetail__model.js' */ 'D:/project/ecs-web/src/pages/customerService/workOrderDetail/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -144,7 +132,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__workOrderDetail__index" */ '../customerService/workOrderDetail/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/workOrderDetail/index.js').default,
@@ -156,7 +144,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__workOrderList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/workOrderList/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__workOrderList__model.js' */ 'D:/project/ecs-web/src/pages/customerService/workOrderList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -164,7 +152,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__workOrderList__index" */ '../customerService/workOrderList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/workOrderList/index.js').default,
@@ -176,7 +164,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__customerService__workOrderTypes__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/customerService/workOrderTypes/model.js').then(
+                import(/* webpackChunkName: 'p__customerService__workOrderTypes__model.js' */ 'D:/project/ecs-web/src/pages/customerService/workOrderTypes/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -184,7 +172,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__customerService__workOrderTypes__index" */ '../customerService/workOrderTypes/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../customerService/workOrderTypes/index.js').default,
@@ -196,7 +184,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__dashboard__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/dashboard/model.js').then(
+                import(/* webpackChunkName: 'p__dashboard__model.js' */ 'D:/project/ecs-web/src/pages/dashboard/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -204,10 +192,22 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__dashboard__index" */ '../dashboard/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../dashboard/index.js').default,
+      },
+      {
+        path: '/Error',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__Error" */ '../Error.js'),
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
+                .default,
+            })
+          : require('../Error.js').default,
       },
       {
         path: '/finance/afterSaleList',
@@ -216,7 +216,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__afterSaleList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/afterSaleList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__afterSaleList__model.js' */ 'D:/project/ecs-web/src/pages/finance/afterSaleList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -224,7 +224,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__afterSaleList__index" */ '../finance/afterSaleList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/afterSaleList/index.js').default,
@@ -236,7 +236,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__chargeSystem__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/chargeSystem/model.js').then(
+                import(/* webpackChunkName: 'p__finance__chargeSystem__model.js' */ 'D:/project/ecs-web/src/pages/finance/chargeSystem/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -244,7 +244,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__chargeSystem__index" */ '../finance/chargeSystem/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/chargeSystem/index.js').default,
@@ -256,7 +256,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__detailAccount__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/detailAccount/model.js').then(
+                import(/* webpackChunkName: 'p__finance__detailAccount__model.js' */ 'D:/project/ecs-web/src/pages/finance/detailAccount/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -264,7 +264,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__detailAccount__index" */ '../finance/detailAccount/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/detailAccount/index.js').default,
@@ -276,7 +276,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__financeList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/financeList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__financeList__model.js' */ 'D:/project/ecs-web/src/pages/finance/financeList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -284,7 +284,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__financeList__index" */ '../finance/financeList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/financeList/index.js').default,
@@ -296,7 +296,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__productProfitList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/productProfitList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__productProfitList__model.js' */ 'D:/project/ecs-web/src/pages/finance/productProfitList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -304,7 +304,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__productProfitList__index" */ '../finance/productProfitList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/productProfitList/index.js').default,
@@ -316,7 +316,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__returnProfitList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/returnProfitList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__returnProfitList__model.js' */ 'D:/project/ecs-web/src/pages/finance/returnProfitList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -324,7 +324,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__returnProfitList__index" */ '../finance/returnProfitList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/returnProfitList/index.js').default,
@@ -336,7 +336,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__supplierDetails__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/supplierDetails/model.js').then(
+                import(/* webpackChunkName: 'p__finance__supplierDetails__model.js' */ 'D:/project/ecs-web/src/pages/finance/supplierDetails/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -344,7 +344,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__supplierDetails__index" */ '../finance/supplierDetails/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/supplierDetails/index.js').default,
@@ -356,7 +356,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__supplierList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/supplierList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__supplierList__model.js' */ 'D:/project/ecs-web/src/pages/finance/supplierList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -364,7 +364,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__supplierList__index" */ '../finance/supplierList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/supplierList/index.js').default,
@@ -376,7 +376,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__totalAccount__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/totalAccount/model.js').then(
+                import(/* webpackChunkName: 'p__finance__totalAccount__model.js' */ 'D:/project/ecs-web/src/pages/finance/totalAccount/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -384,7 +384,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__totalAccount__index" */ '../finance/totalAccount/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/totalAccount/index.js').default,
@@ -396,7 +396,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__transferList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/transferList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__transferList__model.js' */ 'D:/project/ecs-web/src/pages/finance/transferList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -404,7 +404,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__transferList__index" */ '../finance/transferList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/transferList/index.js').default,
@@ -416,7 +416,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__finance__userAccountList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/finance/userAccountList/model.js').then(
+                import(/* webpackChunkName: 'p__finance__userAccountList__model.js' */ 'D:/project/ecs-web/src/pages/finance/userAccountList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -424,7 +424,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__finance__userAccountList__index" */ '../finance/userAccountList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../finance/userAccountList/index.js').default,
@@ -436,7 +436,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__index" */ '../index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../index.js').default,
@@ -448,7 +448,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__login__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/login/model.js').then(
+                import(/* webpackChunkName: 'p__login__model.js' */ 'D:/project/ecs-web/src/pages/login/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -456,7 +456,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__login__index" */ '../login/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../login/index.js').default,
@@ -468,7 +468,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__marketing__couponAdd__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/marketing/couponAdd/model.js').then(
+                import(/* webpackChunkName: 'p__marketing__couponAdd__model.js' */ 'D:/project/ecs-web/src/pages/marketing/couponAdd/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -476,7 +476,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__marketing__couponAdd__index" */ '../marketing/couponAdd/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../marketing/couponAdd/index.js').default,
@@ -488,7 +488,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__marketing__couponList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/marketing/couponList/model.js').then(
+                import(/* webpackChunkName: 'p__marketing__couponList__model.js' */ 'D:/project/ecs-web/src/pages/marketing/couponList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -496,7 +496,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__marketing__couponList__index" */ '../marketing/couponList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../marketing/couponList/index.js').default,
@@ -508,7 +508,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__order__afterSale__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/order/afterSale/model.js').then(
+                import(/* webpackChunkName: 'p__order__afterSale__model.js' */ 'D:/project/ecs-web/src/pages/order/afterSale/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -516,7 +516,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__order__afterSale__index" */ '../order/afterSale/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../order/afterSale/index.js').default,
@@ -528,7 +528,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__order__orderDetail___id" */ '../order/orderDetail/$id.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../order/orderDetail/$id.js').default,
@@ -540,7 +540,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__order__orderList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/order/orderList/model.js').then(
+                import(/* webpackChunkName: 'p__order__orderList__model.js' */ 'D:/project/ecs-web/src/pages/order/orderList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -548,7 +548,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__order__orderList__index" */ '../order/orderList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../order/orderList/index.js').default,
@@ -560,7 +560,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__order__refundAudit__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/order/refundAudit/model.js').then(
+                import(/* webpackChunkName: 'p__order__refundAudit__model.js' */ 'D:/project/ecs-web/src/pages/order/refundAudit/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -568,7 +568,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__order__refundAudit__index" */ '../order/refundAudit/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../order/refundAudit/index.js').default,
@@ -580,7 +580,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__order__sendGoods__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/order/sendGoods/model.js').then(
+                import(/* webpackChunkName: 'p__order__sendGoods__model.js' */ 'D:/project/ecs-web/src/pages/order/sendGoods/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -588,7 +588,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__order__sendGoods__index" */ '../order/sendGoods/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../order/sendGoods/index.js').default,
@@ -600,12 +600,12 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__permissions__models__member.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/permissions/models/member.js').then(
+                import(/* webpackChunkName: 'p__permissions__models__member.js' */ 'D:/project/ecs-web/src/pages/permissions/models/member.js').then(
                   m => {
                     return { namespace: 'member', ...m.default };
                   },
                 ),
-                import(/* webpackChunkName: 'p__permissions__models__security.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/permissions/models/security.js').then(
+                import(/* webpackChunkName: 'p__permissions__models__security.js' */ 'D:/project/ecs-web/src/pages/permissions/models/security.js').then(
                   m => {
                     return { namespace: 'security', ...m.default };
                   },
@@ -613,7 +613,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__permissions__index" */ '../permissions/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../permissions/index.js').default,
@@ -625,7 +625,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__addProduct__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/addProduct/model.js').then(
+                import(/* webpackChunkName: 'p__product__addProduct__model.js' */ 'D:/project/ecs-web/src/pages/product/addProduct/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -633,7 +633,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__addProduct__index" */ '../product/addProduct/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/addProduct/index.js').default,
@@ -645,7 +645,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__brandsList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/brandsList/model.js').then(
+                import(/* webpackChunkName: 'p__product__brandsList__model.js' */ 'D:/project/ecs-web/src/pages/product/brandsList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -653,7 +653,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__brandsList__index" */ '../product/brandsList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/brandsList/index.js').default,
@@ -665,7 +665,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__categoryList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/categoryList/model.js').then(
+                import(/* webpackChunkName: 'p__product__categoryList__model.js' */ 'D:/project/ecs-web/src/pages/product/categoryList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -673,7 +673,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__categoryList__constant" */ '../product/categoryList/constant.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/categoryList/constant.js').default,
@@ -685,7 +685,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__categoryList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/categoryList/model.js').then(
+                import(/* webpackChunkName: 'p__product__categoryList__model.js' */ 'D:/project/ecs-web/src/pages/product/categoryList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -693,7 +693,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__categoryList__index" */ '../product/categoryList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/categoryList/index.js').default,
@@ -705,7 +705,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__labelList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/labelList/model.js').then(
+                import(/* webpackChunkName: 'p__product__labelList__model.js' */ 'D:/project/ecs-web/src/pages/product/labelList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -713,7 +713,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__labelList__index" */ '../product/labelList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/labelList/index.js').default,
@@ -725,7 +725,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__norms__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/norms/model.js').then(
+                import(/* webpackChunkName: 'p__product__norms__model.js' */ 'D:/project/ecs-web/src/pages/product/norms/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -733,7 +733,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__norms__index" */ '../product/norms/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/norms/index.js').default,
@@ -745,7 +745,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__productList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/productList/model.js').then(
+                import(/* webpackChunkName: 'p__product__productList__model.js' */ 'D:/project/ecs-web/src/pages/product/productList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -753,7 +753,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__productList__index" */ '../product/productList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/productList/index.js').default,
@@ -765,7 +765,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__supplierEdit__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/supplierEdit/model.js').then(
+                import(/* webpackChunkName: 'p__product__supplierEdit__model.js' */ 'D:/project/ecs-web/src/pages/product/supplierEdit/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -773,7 +773,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__supplierEdit___id" */ '../product/supplierEdit/$id.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/supplierEdit/$id.js').default,
@@ -785,7 +785,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__product__supplierList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/product/supplierList/model.js').then(
+                import(/* webpackChunkName: 'p__product__supplierList__model.js' */ 'D:/project/ecs-web/src/pages/product/supplierList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -793,7 +793,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__product__supplierList__index" */ '../product/supplierList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../product/supplierList/index.js').default,
@@ -805,7 +805,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__resetPassword__index" */ '../resetPassword/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../resetPassword/index.js').default,
@@ -817,7 +817,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__shipping__delivery__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/shipping/delivery/model.js').then(
+                import(/* webpackChunkName: 'p__shipping__delivery__model.js' */ 'D:/project/ecs-web/src/pages/shipping/delivery/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -825,7 +825,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__shipping__delivery__index" */ '../shipping/delivery/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shipping/delivery/index.js').default,
@@ -837,7 +837,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__shop__decoration___id" */ '../shop/decoration/$id.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shop/decoration/$id.js').default,
@@ -849,7 +849,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__shop__pageList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/shop/pageList/model.js').then(
+                import(/* webpackChunkName: 'p__shop__pageList__model.js' */ 'D:/project/ecs-web/src/pages/shop/pageList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -857,7 +857,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__shop__pageList__index" */ '../shop/pageList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shop/pageList/index.js').default,
@@ -869,7 +869,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__shopInformation__authentication__index" */ '../shopInformation/authentication/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shopInformation/authentication/index.js').default,
@@ -881,7 +881,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__shopInformation__index" */ '../shopInformation/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shopInformation/index.js').default,
@@ -893,7 +893,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__shopInformation__operate__index" */ '../shopInformation/operate/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shopInformation/operate/index.js').default,
@@ -905,7 +905,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__shopInformation__shop__index" */ '../shopInformation/shop/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shopInformation/shop/index.js').default,
@@ -917,7 +917,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__shopInformation__unClassIndex" */ '../shopInformation/unClassIndex.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../shopInformation/unClassIndex.js').default,
@@ -929,7 +929,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getBarOptions1" */ '../statistics/demo/getBarOptions1.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getBarOptions1.js').default,
@@ -941,7 +941,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getBarOptions2" */ '../statistics/demo/getBarOptions2.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getBarOptions2.js').default,
@@ -953,7 +953,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getLineOptions1" */ '../statistics/demo/getLineOptions1.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getLineOptions1.js').default,
@@ -965,7 +965,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getLineOptions2" */ '../statistics/demo/getLineOptions2.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getLineOptions2.js').default,
@@ -977,7 +977,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getMapOptions" */ '../statistics/demo/getMapOptions.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getMapOptions.js').default,
@@ -989,7 +989,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getPieOptions1" */ '../statistics/demo/getPieOptions1.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getPieOptions1.js').default,
@@ -1001,7 +1001,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__getPieOptions2" */ '../statistics/demo/getPieOptions2.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/getPieOptions2.js').default,
@@ -1013,7 +1013,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__statistics__demo__index" */ '../statistics/demo/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../statistics/demo/index.js').default,
@@ -1025,7 +1025,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__system__agreement__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/system/agreement/model.js').then(
+                import(/* webpackChunkName: 'p__system__agreement__model.js' */ 'D:/project/ecs-web/src/pages/system/agreement/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1033,7 +1033,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__system__agreement__index" */ '../system/agreement/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../system/agreement/index.js').default,
@@ -1045,7 +1045,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__system__integralSet__index" */ '../system/integralSet/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../system/integralSet/index.js').default,
@@ -1057,7 +1057,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__system__rebateSet__index" */ '../system/rebateSet/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../system/rebateSet/index.js').default,
@@ -1069,7 +1069,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__system__tradeSet__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/system/tradeSet/model.js').then(
+                import(/* webpackChunkName: 'p__system__tradeSet__model.js' */ 'D:/project/ecs-web/src/pages/system/tradeSet/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1077,7 +1077,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__system__tradeSet__index" */ '../system/tradeSet/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../system/tradeSet/index.js').default,
@@ -1089,7 +1089,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__system__userSet__index" */ '../system/userSet/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../system/userSet/index.js').default,
@@ -1101,7 +1101,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__user__accountSet__index" */ '../user/accountSet/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/accountSet/index.js').default,
@@ -1113,7 +1113,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__user__userAudit__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/user/userAudit/model.js').then(
+                import(/* webpackChunkName: 'p__user__userAudit__model.js' */ 'D:/project/ecs-web/src/pages/user/userAudit/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1121,7 +1121,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__user__userAudit__index" */ '../user/userAudit/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userAudit/index.js').default,
@@ -1133,7 +1133,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__user__userDetail__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/user/userDetail/model.js').then(
+                import(/* webpackChunkName: 'p__user__userDetail__model.js' */ 'D:/project/ecs-web/src/pages/user/userDetail/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1141,7 +1141,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__user__userDetail___id" */ '../user/userDetail/$id.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userDetail/$id.js').default,
@@ -1153,7 +1153,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__user__userGroup__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/user/userGroup/model.js').then(
+                import(/* webpackChunkName: 'p__user__userGroup__model.js' */ 'D:/project/ecs-web/src/pages/user/userGroup/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1161,7 +1161,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__user__userGroup__index" */ '../user/userGroup/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userGroup/index.js').default,
@@ -1173,7 +1173,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__user__userLevel__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/user/userLevel/model.js').then(
+                import(/* webpackChunkName: 'p__user__userLevel__model.js' */ 'D:/project/ecs-web/src/pages/user/userLevel/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1181,7 +1181,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__user__userLevel__index" */ '../user/userLevel/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userLevel/index.js').default,
@@ -1193,7 +1193,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__user__userLevelSet__index" */ '../user/userLevelSet/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userLevelSet/index.js').default,
@@ -1205,7 +1205,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__user__userLevelSet__rebatePattern" */ '../user/userLevelSet/rebatePattern.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userLevelSet/rebatePattern.js').default,
@@ -1217,7 +1217,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__user__userLevelSet__upgradeCondition" */ '../user/userLevelSet/upgradeCondition.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userLevelSet/upgradeCondition.js').default,
@@ -1229,7 +1229,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__user__userList__model.js' */ '/Users/pulei/code/web/project/HHYC/ecs-web/src/pages/user/userList/model.js').then(
+                import(/* webpackChunkName: 'p__user__userList__model.js' */ 'D:/project/ecs-web/src/pages/user/userList/model.js').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -1237,7 +1237,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__user__userList__index" */ '../user/userList/index.js'),
-              LoadingComponent: require('/Users/pulei/code/web/project/HHYC/ecs-web/src/components/Loader/Loader')
+              LoadingComponent: require('D:/project/ecs-web/src/components/Loader/Loader')
                 .default,
             })
           : require('../user/userList/index.js').default,
@@ -1245,7 +1245,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/Users/pulei/code/web/project/HHYC/ecs-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('D:/project/ecs-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: false },
           ),
@@ -1256,7 +1256,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('/Users/pulei/code/web/project/HHYC/ecs-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('D:/project/ecs-web/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),

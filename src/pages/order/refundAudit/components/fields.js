@@ -19,7 +19,7 @@ export const tabsFilds = [
   },
 ]
 
-export const getSearchFields = (enums = []) => {
+export const getSearchFields = () => {
   return [
     {
       key: 'order_sn',
@@ -52,6 +52,9 @@ export const getSearchFields = (enums = []) => {
     {
       key: 'user_id',
       placeholder: '用户ID',
+      inputProps: {
+        type: 'number'
+      }
     }
     // {
     //   key: 'goods_fee',

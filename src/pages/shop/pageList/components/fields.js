@@ -1,4 +1,4 @@
-import { Divider,Popconfirm } from 'antd'
+import { Divider, Popconfirm, Tooltip, Button } from 'antd'
 import { Fragment } from 'react';
 
 export const searchFields = [
@@ -71,26 +71,56 @@ export const getColumns = function(){
             fixed: 'right',
             width: 180,
             render:(text,row)=>{
+                console.log("text",text)
+                console.log("row",row)
+                console.log("===================================")
                 return (
                     <div>
-                    {
-                        $api.shop.editPage.permission() &&
-                        <Fragment>
-                        <a
-                            onClick={() => {
-                            this.goEdit(row.id)
-                            }}
-                        >
-                            编辑
-                            
-                        </a>
-                        <Divider type="vertical" />
-                        </Fragment>
-                    }
-                        
+                        {
+                            $api.shop.editPage.permission() &&
+                            <>
+                            <a
+                                onClick={() => {
+                                this.goEdit(row.id)
+                                }}
+                            >
+                                编辑
+                                
+                            </a>
+                            </>
+                        }
+            
+                        {
+                            $api.shop.prod.permission() && 
+                            (
+                                row.publishable ===1 ?
+                                <>
+                                    <Divider type="vertical" />
+                                    <Popconfirm
+                                    title="确认后页面将生效，确认发布此页面?"
+                                    placement="topRight"
+                                    onConfirm={() => {
+                                        this.prod(row.id)
+                                    }}
+                                    okText="确认"
+                                    cancelText="取消">
+                                    <Button type="link" size="small" >发布</Button>
+                                    </Popconfirm>
+                                </>
+                                :
+                                <>
+                                    <Divider type="vertical" />
+                                    <Tooltip placement="topRight" title="C端已是最新版本，不需要重复发布了">
+                                    <Button type="link" size="small" disabled>发布</Button>
+                                    </Tooltip>
+                                </>
+                            )
+                        }
+
                         {
                             +row.page_type_id!==1 && $api.shop.delPage.permission() &&
-                            <Fragment>
+                            <>
+                                <Divider type="vertical" />
                                 <Popconfirm
                                     title="确认删除这个页面?"
                                     placement="topRight"
@@ -106,27 +136,8 @@ export const getColumns = function(){
                                     删除
                                     </a>
                                 </Popconfirm>
-                            <Divider type="vertical" />
-                            </Fragment>
+                            </>
                         }
-                        {
-                            $api.shop.prod.permission() &&
-                            <Popconfirm
-                            title="确认后页面将生效，确认发布此页面?"
-                            placement="topRight"
-                            onConfirm={() => {
-                                this.prod(row.id)
-                            }}
-                            okText="确认"
-                            cancelText="取消"
-                        >
-                            <a
-                            >
-                            发布
-                            </a>
-                        </Popconfirm>
-                        }
-
                     </div>
                 )
             }

@@ -117,6 +117,7 @@ class ProductList extends PureComponent {
     const { goods_status, list, pagination, query } = productList
     const btns = [
       {
+        icon: 'plus',
         name: '新增商品',
         type: 'primary',
         handleClick: this.addProduct,

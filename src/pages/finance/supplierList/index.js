@@ -80,7 +80,7 @@ class LoanList extends PureComponent {
     const { id = '', supplier_id = '' } = row
     router.push({
       pathname: `/finance/supplierDetails`,
-      payload: { id, supplier_id }
+      query: { id, supplier_id }
     })
   }
 

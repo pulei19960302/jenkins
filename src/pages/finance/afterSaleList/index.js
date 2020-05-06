@@ -80,7 +80,7 @@ class AfterSaleList extends PureComponent {
         <Col span={6}>
           <div className={styles.totalCol}>
             <div>
-              <span>售后量&nbsp;(单)</span>
+              <span>售后订单总量&nbsp;(单)</span>
               <span className={styles.num}>{account.formatNumber(sales_num)}</span>
             </div>
           </div>
@@ -88,7 +88,7 @@ class AfterSaleList extends PureComponent {
         <Col span={6} >
           <div className={styles.totalCol}>
             <div>
-              <span>售后总额&nbsp;(元)</span>
+              <span>售后申请总额&nbsp;(元)</span>
               <span className={styles.num}>{account.formatMoney(sum_total_fee, '￥')}</span>
             </div>
           </div>
@@ -96,7 +96,7 @@ class AfterSaleList extends PureComponent {
         <Col span={6} >
           <div className={styles.totalCol}>
             <div>
-              <span>售后退款&nbsp;(元)</span>
+              <span>售后退款总额&nbsp;(元)</span>
               <span className={styles.num}>{account.formatMoney(sum_return_money, '￥')}</span>
             </div>
           </div>
@@ -104,7 +104,7 @@ class AfterSaleList extends PureComponent {
         <Col span={6}>
           <div className={styles.totalCol}>
             <div>
-              <span>售后补偿&nbsp;(元)</span>
+              <span>售后补偿总额&nbsp;(元)</span>
               <span className={styles.num}>{account.formatMoney(sum_add_fee, '￥')}</span>
             </div>
           </div>
@@ -137,7 +137,7 @@ class AfterSaleList extends PureComponent {
           </span>
           <span>售后服务单&nbsp;:&nbsp;&nbsp;<a onClick={() => { this.routeAfterSale(order) }}>{return_sn}</a></span>
           <span>申请时间&nbsp;:&nbsp;&nbsp;{created_at && moment(created_at).format(FORMAT.DATETIME)}</span>
-          <span className="pull-right">用户昵称:&nbsp;{uid_name}&nbsp;({uid})</span>
+          <span className="pull-right">用户名:&nbsp;{uid_name}&nbsp;({uid})</span>
         </div>
 
         <div className={`${styles.listContent} ${styles.flex}`}>

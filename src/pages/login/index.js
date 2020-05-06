@@ -1,75 +1,64 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'dva'
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Form } from '@ant-design/compatible';
-import '@ant-design/compatible/assets/index.css';
-import { Button, Input } from 'antd';
-import logo from 'assets/images/logo.png'
+import { Button, Input, Form } from 'antd'
+import {debounce} from 'lodash'
+import { IconFont } from 'components'
+import leftImage from 'assets/images/bj-left.png'
 import styles from './index.less'
 
 @connect(({ loading }) => ({ loading }))
-@Form.create()
 class Login extends PureComponent {
-  handleOk = () => {
-    const { dispatch, form } = this.props
-    const { validateFields } = form
-    validateFields((errors, values) => {
-      if (errors) {
-        return
-      }
-      dispatch({ type: 'login/login', payload: values })
-    })
+
+  onFinish = (values) => {
+    const { dispatch } = this.props
+    dispatch({ type: 'login/login', payload: values })
   }
 
   render() {
-    const { loading, form } = this.props
-    const { getFieldDecorator } = form
+    const { loading } = this.props
 
     return (
       <div className={styles.login}>
-        <div className={styles.icon}>
-          <img src={logo} />
-        </div>
         <div className={styles.center}>
-          <Form>
-            <div className={styles.title}>登录</div>
-            <Form.Item>
-              <span className={styles.label}>
-                <UserOutlined className='mr8' />
-                账号
-              </span>
-              {
-                getFieldDecorator('username', {
-                  rules: [{
-                    required: true,
-                    message: '请输入账号',
-                  }],
-                })(
-                  <Input placeholder="请输入账号" size='large' />
-                )
-              }
+          <img src={leftImage} className='leftImage' />
+          <Form onFinish={debounce(this.onFinish, 300)}>
+            <div className='title'>登录</div>
+            <Form.Item
+              name='username'
+              rules={[{
+                required: true,
+                message: '请输入账号',
+              }]}
+              className='username'
+            >
+              <Input placeholder="请输入账号" size='large' prefix={<IconFont type='iconuser' />} />
+            </Form.Item>
+            <Form.Item
+              name='password'
+              rules={[{
+                required: true,
+                message: '请填写密码',
+              }]}
+              className='password'
+            >
+              <Input.Password placeholder="请输入密码" size='large' prefix={<IconFont type='iconsuo' />}/>
             </Form.Item>
             <Form.Item>
-              <span className={styles.label}>
-                <LockOutlined className='mr8' />
-                密码
-              </span>
-              {getFieldDecorator('password', {
-                rules: [{
-                  required: true,
-                  message: '请填写密码',
-                }],
-              })(
-                <Input.Password onPressEnter={this.handleOk} placeholder="请输入密码" size='large' />
-              )}
+              <Button
+                className='submit'
+                type="primary"
+                htmlType="submit"
+                loading={loading.effects['login/login']}
+              >
+                登录
+              </Button>
             </Form.Item>
-            <Button className={styles.submit} type="primary" onClick={this.handleOk} loading={loading.effects.login}>
-              登录
-            </Button>
           </Form>
         </div>
         <div className={styles.footer}>
-
+          <span>Copyright&nbsp;©&nbsp;2020&nbsp;www.hehewin.com&nbsp;All&nbsp;Rights&nbsp;Reserved</span>
+          <br/>
+          <span>成都合和盈创科技有限公司版权所有&nbsp;&nbsp;&nbsp;蜀ICP备20010387号-2</span>
         </div>
       </div>
     );

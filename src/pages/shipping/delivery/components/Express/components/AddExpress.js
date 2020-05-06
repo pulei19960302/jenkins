@@ -2,7 +2,7 @@ import { connect } from 'dva'
 import React, { PureComponent } from 'react'
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
-import { Modal, Button, Input } from 'antd';
+import { Modal, Button, Input, Select } from 'antd';
 import { FSwitch } from 'components'
 import { EXPRESS_STATUS } from '../../../../constants'
 import styles from '../index.less'
@@ -17,7 +17,17 @@ class AddExpress extends PureComponent {
     super(props)
     this.state = {
       loading: false,
+      expressList: [],
     }
+  }
+
+  componentDidMount() {
+    $api.shipping.expressList().then(res => {
+      const { data = [] } = res
+      this.setState({
+        expressList: data || []
+      })
+    })
   }
 
   toggleLoading = () => {
@@ -50,9 +60,16 @@ class AddExpress extends PureComponent {
     onCancel && onCancel()
   }
 
+  handleCheckExpress = (value, option = {}) => {
+    const { code: express_code = '' } = option
+    this.props.form.setFieldsValue({ express_code })
+  }
+
   render() {
-    const { visible, form: { getFieldDecorator } } = this.props
-    const { loading } = this.state
+    const { visible, form } = this.props
+    const { getFieldDecorator } = form
+    const { loading, expressList } = this.state
+    const express_code = form.getFieldValue('express_code')
 
     return (
       <Modal
@@ -70,20 +87,39 @@ class AddExpress extends PureComponent {
             {getFieldDecorator('name', {
               rules: [{
                 required: true,
-                message: '请填写物流公司名称',
+                message: '请选择物流公司',
               }]
             })(
-              <Input placeholder="请输入物流公司" maxLength={30} autoComplete='off' />
+              <Select
+                showSearch
+                showArrow
+                onChange={this.handleCheckExpress}
+                disabled={!expressList || !expressList.length}
+              >
+                {
+                  expressList && expressList.map(el => (
+                    <Select.Option key={el.id} code={el.code} value={el.name}>
+                      {el.name}
+                    </Select.Option>
+                  ))
+                }
+              </Select>
             )}
           </Form.Item>
           <Form.Item label="物流代码">
             {getFieldDecorator('express_code', {
               rules: [{
                 required: true,
-                message: '请填写物流代码',
+                message: '请选择物流公司',
               }]
             })(
-              <Input placeholder="请输入物流代码" maxLength={32} />
+              <Input
+                placeholder="选择物流公司后自动生成"
+                maxLength={32}
+                readOnly
+                disabled={!express_code}
+                style={{ 'cursor': 'default' }}
+              />
             )}
           </Form.Item>
           <Form.Item label="联系方式">

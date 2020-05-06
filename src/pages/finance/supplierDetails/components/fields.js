@@ -1,7 +1,7 @@
 import { LinesEllipsis } from 'components'
 import account from 'accounting'
 import moment from 'moment'
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 import { DATE_RANGE, FORMAT } from '../../constants'
 
 export const getSearchFields = function (types) {
@@ -85,7 +85,7 @@ export const getColumns = function (types) {
           return (
             <div>
               <span>
-                <ArrowLeftOutlined style={{ color: '#d9001b', fontSize: '12px' }} />
+                <MinusOutlined style={{ color: '#d9001b', fontSize: '12px' }} />
                 &nbsp;{account.formatMoney(Math.abs(text), '￥')}
               </span>
             </div>
@@ -95,7 +95,7 @@ export const getColumns = function (types) {
         return (
           <div>
             <span>
-              <ArrowRightOutlined style={{ color: '#70b603', fontSize: '12px' }} />
+              <PlusOutlined style={{ color: '#70b603', fontSize: '12px' }} />
               &nbsp;{account.formatMoney(text, '￥')}
             </span>
           </div>
@@ -117,7 +117,7 @@ export const getColumns = function (types) {
       ),
     },
     {
-      title: '交易完成时间',
+      title: '交易时间',
       dataIndex: 'updated_at',
       render: (text) => (
         <span>{text && moment(text * 1000).format(FORMAT.DATETIME)}</span>

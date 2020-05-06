@@ -16,8 +16,12 @@ export default modelExtend(model, pageModel, {
   },
   subscriptions: {
     setup({ dispatch, history }) {
-      history.listen(({ pathname }) => {
+      history.listen(({ pathname, query }) => {
         if (pathMatchRegexp('/finance/userAccountList', pathname)) {
+          dispatch({
+            type: 'updateState',
+            payload: { query }
+          })
           dispatch({ type: 'getList' })
         }
       })

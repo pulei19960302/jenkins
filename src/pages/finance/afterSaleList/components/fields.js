@@ -52,7 +52,7 @@ export const getSearchFields = function (types) {
 export const getColumns = function () {
   return [
     {
-      title: '商品信息',
+      title: '订单信息',
       key: 'goodsInfo',
       span: '3',
       render: (item, field) => {
@@ -95,7 +95,7 @@ export const getColumns = function () {
       title: () => {
         return (
           <span className={styles.title}>
-            售后总额
+            申请金额
             <Popover content="售后申请的合计售后金额，售后传参；展示金额+售后渠道">
               <QuestionCircleFilled className={styles.questionIcon} />
             </Popover>
@@ -112,7 +112,7 @@ export const getColumns = function () {
       title: () => {
         return (
           <span className={styles.title}>
-            售后退款
+            退款金额
             <Popover content="当前订单的售后产生的实际退款金额；展示金额+售后渠道">
               <QuestionCircleFilled className={styles.questionIcon} />
             </Popover>
@@ -129,7 +129,7 @@ export const getColumns = function () {
       title: () => {
         return (
           <span className={styles.title}>
-            售后补偿
+            补偿金额
             <Popover content="当前订单在售后中除退款外得到的额外补偿金额及返还渠道（余额或佣金）">
               <QuestionCircleFilled className={styles.questionIcon} />
             </Popover>

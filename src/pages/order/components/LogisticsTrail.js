@@ -10,10 +10,10 @@ class LogisticsTrail extends PureComponent {
       const { logistics, order } = nextProps
       const { id, logistics_sn, express_code } = order
       if(logistics){
-        this.setState({ logistics: nextProps.logistics })
+        this.setState({ logistics: logistics.content })
       }else{
         $api.order.getLogistics({id, sn: logistics_sn, code: express_code}).then( res => {
-          this.setState({ logistics: res.data })
+          this.setState({ logistics: res.data.content })
         })
       }
     }
@@ -34,13 +34,13 @@ class LogisticsTrail extends PureComponent {
       <Modal {...modalOpts}>
         <Timeline>
           {
-            logistics.map((text,index)=><Timeline.Item key={index}>{text}</Timeline.Item>)
+            logistics.map((item,index)=><Timeline.Item key={index}>{item.time} {item.text}</Timeline.Item>)
           }
         </Timeline>
       </Modal>
     )
   }
-  
+
 }
 
 export default LogisticsTrail

@@ -4,7 +4,7 @@ import { Page, TabsBar, SearchForm, Pagination } from 'components'
 import { getSearchFields, tabsFilds } from './components/fields'
 import List from './components/List'
 
-@connect(({ refundAudit, app, loading }) => ({ refundAudit, app, loading }))
+@connect(({ refundAudit, loading }) => ({ refundAudit, loading }))
 class AfterSale extends PureComponent {
   constructor(props) {
     super(props)
@@ -52,11 +52,11 @@ class AfterSale extends PureComponent {
     dispatch({ type: 'refundAudit/refundAuditSta' })
   }
   render() {
-    const { loading, refundAudit, app } = this.props
+    const { loading, refundAudit } = this.props
     const { pagination, list, query, status } = refundAudit
     const searchFormProps = {
       search: query,
-      fields: getSearchFields(app.enums.sales_type),
+      fields: getSearchFields(),
       onSearch: this.handleSearch,
     }
     const btns = [{

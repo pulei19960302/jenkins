@@ -1,6 +1,6 @@
 import store from 'store'
 export function btnPermission(url) {
-    // return true
+  // return true
   const targetUrl = url[0] === '/' ? `/admin${url}` : `/admin/${url}`
   const button_permissions = [...getBtnPermission(), ...getMenuPermission()]
   if (!button_permissions || button_permissions.length === 0) {
@@ -31,8 +31,8 @@ function getMenuPermission() {
 }
 
 export function menuPermission(routeList) {
-    // return routeList
-  const menu_permissions = getMenuPermission()
+  // return routeList
+  const menu_permissions = [...getBtnPermission(), ...getMenuPermission()]
   if (!menu_permissions || menu_permissions.length === 0) {
     return []
   }
@@ -40,17 +40,17 @@ export function menuPermission(routeList) {
     if (!it.menu_permissions) return true
     if (it.menu_permissions.length === 0) return true
     if (it.menu_permissions instanceof Array) {
-      return it.menu_permissions.every(item => menu_permissions.includes(item[0] === '/' ? `/admin${item}` : `/admin/${item}`))
+      return it.menu_permissions.every(item => (menu_permissions.includes(item[0] === '/' ? `/admin${item}` : `/admin/${item}`)) || menu_permissions.includes(item))
     }
     if (typeof (it.menu_permissions) === 'string') {
-      return it.menu_permissions.split(',').some(item => menu_permissions.includes(item[0] === '/' ? `/admin${item}` : `/admin/${item}`))
+      return it.menu_permissions.split(',').some(item => (menu_permissions.includes(item[0] === '/' ? `/admin${item}` : `/admin/${item}`)) || menu_permissions.includes(item))
     }
     return false
   })
 }
 
 export function hasPagePermission(newRouteList) {
-    // return true
+  // return true
   const menu_permissions = getMenuPermission()
   if (!menu_permissions || menu_permissions.length === 0) {
     return true
