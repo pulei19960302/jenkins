@@ -11,7 +11,7 @@ export default {
   targets: { ie: 9 },
   treeShaking: true,
   history: 'hash',
-  publicPath: process.env.UMI_ENV === 'prod' ? '/web/' : '',
+  publicPath: process.env.UMI_ENV === 'prod' ? '/' : '',
   hash: true,
   devtool: 'eval',
   plugins: [
