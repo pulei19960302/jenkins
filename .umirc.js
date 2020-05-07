@@ -11,7 +11,7 @@ export default {
   targets: { ie: 9 },
   treeShaking: true,
   history: 'hash',
-  publicPath: process.env.UMI_ENV === 'prod' ? '/dist' : '',
+  publicPath: process.env.UMI_ENV === 'prod' ? '/dist/' : '',
   hash: true,
   devtool: 'eval',
   plugins: [
