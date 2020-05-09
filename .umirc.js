@@ -13,7 +13,7 @@ export default {
   history: 'hash',
   publicPath: process.env.UMI_ENV === 'prod' ? '/dist/' : '',
   hash: true,
-  devtool: 'eval',
+  esbuild: {},
   plugins: [
     [
       // https://umijs.org/zh/plugin/umi-plugin-react.html#%E5%AE%89%E8%A3%85
