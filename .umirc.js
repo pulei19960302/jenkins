@@ -19,6 +19,7 @@ export default {
       // https://umijs.org/zh/plugin/umi-plugin-react.html#%E5%AE%89%E8%A3%85
       'umi-plugin-react',
       {
+        esbuild: {},
         locale: {
           default: 'zh-CN', // 默认语言 zh-CN
           baseNavigator: false, // 为 true 时，用 navigator.language 的值作为默认语言
