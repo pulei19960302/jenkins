@@ -7,6 +7,7 @@
     "@ant-design/compatible": "^1.0.1",
     "@ant-design/icons": "^4.0.3",
     "@antv/g6": "^3.3.5",
+    "@umijs/plugin-esbuild": "^1.0.0-beta.2",
     "accounting": "^0.4.1",
     "animate.css": "^3.7.2",
     "ant-design-pro": "^2.3.0",
